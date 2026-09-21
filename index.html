@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amanullah Naseer | Autonomous Systems, Edge AI & Robotics Engineer</title>
-  <meta name="description" content="Computer & Software Engineer specializing in Autonomous UAV Systems, Custom RF-DETR/YOLO Edge Vision, Isaac Sim Digital Twins, and High-Throughput Ground Control Stations.">
+  <meta name="description" content="Computer & Software Engineer specializing in Autonomous UAV Systems, Custom RF-DETR/YOLO Edge Vision, Isaac Sim Digital Twins, and C# (.NET) / PyQt6 Ground Control Stations.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,28 +46,27 @@
       background-color: #060911;
       color: #e2e8f0;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
     }
     .grid-bg {
       background-image: radial-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px);
       background-size: 32px 32px;
     }
     .glass-panel {
-      background: rgba(11, 17, 30, 0.75);
-      backdrop-filter: blur(12px);
+      background: rgba(11, 17, 30, 0.85);
+      backdrop-filter: blur(14px);
       border: 1px solid rgba(30, 41, 59, 0.7);
     }
     .glass-panel:hover {
-      border-color: rgba(6, 182, 212, 0.4);
+      border-color: rgba(6, 182, 212, 0.45);
     }
     .accent-glow {
       box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.25);
     }
-    .video-glow {
-      box-shadow: 0 0 50px -15px rgba(16, 185, 129, 0.2);
-    }
     /* Custom scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 7px;
+      height: 7px;
     }
     ::-webkit-scrollbar-track {
       background: #060911;
@@ -83,17 +82,17 @@
 </head>
 <body class="grid-bg min-h-screen antialiased selection:bg-cyan-500/30 selection:text-cyan-300">
 
-  <!-- TOP STATUS BANNER -->
-  <div class="border-b border-slate-800/80 bg-dark-900/90 text-xs py-2 px-4 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-      <div class="flex items-center space-x-2 font-mono text-slate-400">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+  <!-- TOP STATUS BANNER (Fully Responsive) -->
+  <div class="border-b border-slate-800/80 bg-dark-900/95 text-xs py-2 px-4 sm:px-6 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-2 font-mono text-slate-400 text-[11px] sm:text-xs">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></span>
         <span class="text-emerald-400 font-semibold">STATUS:</span>
         <span>OPEN TO AUTONOMOUS UAV & EDGE AI ENGINEERING ROLES</span>
       </div>
-      <div class="flex items-center space-x-4 text-slate-400 text-xs font-mono">
-        <span class="hidden sm:inline">LOC: Rawalpindi, Pakistan</span>
-        <span class="text-slate-600">•</span>
+      <div class="flex items-center space-x-3 text-slate-400 text-[11px] sm:text-xs font-mono">
+        <span class="hidden md:inline">LOC: Rawalpindi, Pakistan</span>
+        <span class="hidden md:inline text-slate-600">•</span>
         <a href="https://github.com/amanullah7x" target="_blank" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
           <i data-lucide="github" class="w-3.5 h-3.5"></i> github.com/amanullah7x
         </a>
@@ -105,20 +104,27 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <header class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-    <div class="flex items-center gap-3">
-      <img src="https://github.com/amanullah7x.png" alt="Amanullah Naseer" class="w-11 h-11 rounded-full border-2 border-cyan-400/60 shadow-lg shadow-cyan-500/20 object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Amanullah+Naseer&background=0284c7&color=fff'">
-      <div>
-        <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-          Amanullah Naseer
-          <span class="text-xs font-mono font-normal px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Computer & Software Engineer</span>
-        </h1>
-        <p class="text-xs text-slate-400 font-mono">Autonomous UAVs • Edge Vision • High-Rate Telemetry</p>
+  <!-- NAVIGATION HEADER (Responsive Split-Screen & Mobile Support) -->
+  <header class="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center relative z-40">
+    <div class="flex items-center gap-3 min-w-0">
+      <img src="https://github.com/amanullah7x.png" alt="Amanullah Naseer" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-cyan-400/60 shadow-lg shadow-cyan-500/20 object-cover flex-shrink-0" onerror="this.src='https://ui-avatars.com/api/?name=Amanullah+Naseer&background=0284c7&color=fff'">
+      <div class="min-w-0">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <h1 class="text-base sm:text-lg font-bold tracking-tight text-white whitespace-nowrap">
+            Amanullah Naseer
+          </h1>
+          <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 whitespace-nowrap">
+            Computer & Software Engineer
+          </span>
+        </div>
+        <p class="text-[11px] sm:text-xs text-slate-400 font-mono truncate">
+          Autonomous UAVs • C# (.NET) / PyQt6 • Edge Vision
+        </p>
       </div>
     </div>
     
-    <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+    <!-- DESKTOP NAV (Only visible at xl: 1280px+ to ensure zero collision on half-screen) -->
+    <nav class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-300">
       <a href="#demos" class="hover:text-cyan-400 transition-colors">Video Demos</a>
       <a href="#evaluation" class="hover:text-cyan-400 transition-colors">Model Benchmarks</a>
       <a href="#architectures" class="hover:text-cyan-400 transition-colors">Case Studies</a>
@@ -128,62 +134,93 @@
         <i data-lucide="mail" class="w-3.5 h-3.5"></i> Contact
       </a>
     </nav>
+
+    <!-- MOBILE / TABLET / HALF-SCREEN HAMBURGER (Visible below xl) -->
+    <div class="flex items-center gap-2 xl:hidden">
+      <a href="mailto:anaseer.ce41ceme@ce.ceme.edu.pk" class="px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold flex items-center gap-1">
+        <i data-lucide="mail" class="w-3.5 h-3.5"></i> <span class="hidden sm:inline">Contact</span>
+      </a>
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 hover:text-white hover:bg-slate-700 transition-all focus:outline-none" aria-label="Toggle navigation">
+        <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+      </button>
+    </div>
   </header>
 
+  <!-- MOBILE / HALF-SCREEN DROPDOWN MENU -->
+  <div id="mobile-menu" class="hidden xl:hidden max-w-7xl mx-auto px-4 sm:px-6 pb-4">
+    <div class="rounded-xl glass-panel p-4 border-slate-800 space-y-2 font-medium text-sm text-slate-300">
+      <a href="#demos" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-slate-800/80 hover:text-cyan-400 transition-all flex items-center gap-2">
+        <i data-lucide="play-circle" class="w-4 h-4 text-cyan-400"></i> Video Demos
+      </a>
+      <a href="#evaluation" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-slate-800/80 hover:text-cyan-400 transition-all flex items-center gap-2">
+        <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-400"></i> Model Benchmarks
+      </a>
+      <a href="#architectures" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-slate-800/80 hover:text-cyan-400 transition-all flex items-center gap-2">
+        <i data-lucide="boxes" class="w-4 h-4 text-blue-400"></i> Case Studies
+      </a>
+      <a href="#research" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-slate-800/80 hover:text-cyan-400 transition-all flex items-center gap-2">
+        <i data-lucide="microchip" class="w-4 h-4 text-purple-400"></i> Hardware & R&D
+      </a>
+      <a href="#deep-dive" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-slate-800/80 hover:text-cyan-400 transition-all flex items-center gap-2">
+        <i data-lucide="layers" class="w-4 h-4 text-amber-400"></i> System Design
+      </a>
+    </div>
+  </div>
+
   <!-- HERO SECTION -->
-  <section class="max-w-7xl mx-auto px-6 pt-10 pb-16">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-12 sm:pb-16">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs font-mono text-cyan-400">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-[11px] sm:text-xs font-mono text-cyan-400">
           <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i>
           <span>Low-Level Hardware Constraints × Real-Time High-Throughput Software</span>
         </div>
 
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
           Architecting High-Speed <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">Autonomous UAVs</span> & Edge AI Systems
         </h2>
 
-        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
-          I build end-to-end intelligent flight and perception systems operating under rigorous physical constraints. My work bridges <span class="text-cyan-300 font-medium">PX4/ArduPilot</span> autopilot integration, <span class="text-emerald-300 font-medium">NVIDIA Isaac Sim</span> digital twins, <span class="text-cyan-300 font-medium">RF-DETR / TensorRT</span> sub-component tracking on Jetson & Coral EdgeTPU, and <span class="text-purple-300 font-medium">PyQt6</span> ground control stations consuming 50+ Hz telemetry feeds without event loop stutter.
+        <p class="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl font-light">
+          I build end-to-end intelligent flight and perception systems operating under rigorous physical constraints. My work bridges <span class="text-cyan-300 font-medium">PX4/ArduPilot</span> autopilot integration, <span class="text-emerald-300 font-medium">NVIDIA Isaac Sim</span> digital twins, <span class="text-cyan-300 font-medium">RF-DETR / TensorRT</span> sub-component tracking on Jetson & Coral EdgeTPU, and high-performance <span class="text-purple-300 font-medium">C# (.NET) & PyQt6</span> ground control stations consuming 50+ Hz telemetry feeds without event loop stutter.
         </p>
 
         <!-- ACTION BUTTONS -->
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#demos" class="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2">
+        <div class="flex flex-wrap gap-3 sm:gap-4 pt-2">
+          <a href="#demos" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium text-xs sm:text-sm transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2">
             <i data-lucide="play" class="w-4 h-4 fill-white"></i> Watch Video Demos
           </a>
-          <a href="https://github.com/amanullah7x" target="_blank" class="px-6 py-3 rounded-lg bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+          <a href="https://github.com/amanullah7x" target="_blank" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 font-medium text-xs sm:text-sm transition-all flex items-center gap-2">
             <i data-lucide="github" class="w-4 h-4"></i> GitHub Repositories
           </a>
-          <a href="https://linkedin.com/in/amanullah7x" target="_blank" class="px-6 py-3 rounded-lg bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 text-blue-400 font-medium text-sm transition-all flex items-center gap-2">
+          <a href="https://linkedin.com/in/amanullah7x" target="_blank" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 text-blue-400 font-medium text-xs sm:text-sm transition-all flex items-center gap-2">
             <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn Profile
           </a>
         </div>
 
-        <!-- KEY SYSTEM BENCHMARKS -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
-          <div class="p-4 rounded-xl glass-panel border-slate-800">
-            <div class="text-2xl font-bold font-mono text-cyan-400">89.4%</div>
-            <div class="text-xs text-slate-400 font-mono mt-1">RF-DETR Nano mAP@50</div>
+        <!-- KEY SYSTEM BENCHMARKS (Responsive 2x2 on Mobile/Half, 4 on Full) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6">
+          <div class="p-3.5 sm:p-4 rounded-xl glass-panel border-slate-800">
+            <div class="text-xl sm:text-2xl font-bold font-mono text-cyan-400">89.4%</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">RF-DETR Nano mAP@50</div>
           </div>
-          <div class="p-4 rounded-xl glass-panel border-slate-800">
-            <div class="text-2xl font-bold font-mono text-emerald-400">50+ Hz</div>
-            <div class="text-xs text-slate-400 font-mono mt-1">MAVLink Telemetry Feed</div>
+          <div class="p-3.5 sm:p-4 rounded-xl glass-panel border-slate-800">
+            <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-400">50+ Hz</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">MAVLink Telemetry Feed</div>
           </div>
-          <div class="p-4 rounded-xl glass-panel border-slate-800">
-            <div class="text-2xl font-bold font-mono text-amber-400">20 Hz</div>
-            <div class="text-xs text-slate-400 font-mono mt-1">Decoupled UI Render</div>
+          <div class="p-3.5 sm:p-4 rounded-xl glass-panel border-slate-800">
+            <div class="text-xl sm:text-2xl font-bold font-mono text-amber-400">20 Hz</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">Decoupled UI Render</div>
           </div>
-          <div class="p-4 rounded-xl glass-panel border-slate-800">
-            <div class="text-2xl font-bold font-mono text-purple-400">&lt;22ms</div>
-            <div class="text-xs text-slate-400 font-mono mt-1">Edge Inference Latency</div>
+          <div class="p-3.5 sm:p-4 rounded-xl glass-panel border-slate-800">
+            <div class="text-xl sm:text-2xl font-bold font-mono text-purple-400">&lt;22ms</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">Edge Inference Latency</div>
           </div>
         </div>
       </div>
 
       <!-- RIGHT HERO VISUAL: TELEMETRY STREAM LOG -->
       <div class="lg:col-span-5">
-        <div class="rounded-2xl glass-panel p-6 border-slate-800 relative overflow-hidden accent-glow">
+        <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 relative overflow-hidden accent-glow">
           <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
             <span class="text-xs font-mono text-cyan-400 flex items-center gap-1.5">
               <i data-lucide="terminal" class="w-3.5 h-3.5"></i> telemetry_flight_stack.log
@@ -192,17 +229,17 @@
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> STREAMING
             </span>
           </div>
-          <div class="font-mono text-xs text-slate-300 space-y-2 leading-relaxed">
+          <div class="font-mono text-[11px] sm:text-xs text-slate-300 space-y-2 leading-relaxed overflow-x-auto">
             <p class="text-slate-500">// Real-time MAVLink State Decoupling</p>
             <p><span class="text-cyan-400">[PUB/SUB]</span> ZMQ Sub port <span class="text-amber-300">5556</span> active (55.4 Hz)</p>
             <p><span class="text-emerald-400">[KALMAN]</span> State Vector Est: X=<span class="text-cyan-300">12.44m</span> Y=<span class="text-cyan-300">-4.18m</span> Z=<span class="text-cyan-300">28.50m</span></p>
             <p><span class="text-purple-400">[VISION]</span> Target: <span class="text-amber-300">Tank</span> (0.89) | <span class="text-emerald-300">Turret</span> (0.84) | <span class="text-cyan-300">Track</span> (0.41)</p>
             <p><span class="text-cyan-400">[SERVO]</span> Offboard Yaw Rate Cmd: <span class="text-cyan-300">+0.14 rad/s</span> ($dx/dy$ Lock)</p>
-            <p><span class="text-slate-400">[UI-AGG]</span> Circular Ring Buffer: <span class="text-emerald-400">20.0 FPS</span> (0 dropped msgs)</p>
+            <p><span class="text-slate-400">[UI-AGG]</span> C# TPL / PyQt6 Ring Buffer: <span class="text-emerald-400">20.0 FPS</span> (0 dropped msgs)</p>
           </div>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] sm:text-xs text-slate-400 font-mono">
             <span>EDGE: JETSON / RPi5 CORAL</span>
-            <span class="text-cyan-400">SITL: NVIDIA ISAAC SIM</span>
+            <span class="text-cyan-400">STACK: C# & PYTHON</span>
           </div>
         </div>
       </div>
@@ -210,29 +247,29 @@
   </section>
 
   <!-- INTERACTIVE VIDEO DEMOS -->
-  <section id="demos" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section id="demos" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400 mb-3">
         <i data-lucide="video" class="w-3.5 h-3.5"></i> Verified Field & Simulation Evidence
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
         Simulation & Real-Time Aerial Perception Output
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-3">
+      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
         Actual recordings validating closed-loop Software-in-the-Loop (SITL) flight control and real-time aerial target tracking pipelines.
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-8">
+    <div class="grid lg:grid-cols-2 gap-6 sm:gap-8">
       
       <!-- DEMO 1: ISAAC SIM DIGITAL TWIN -->
-      <div class="rounded-2xl glass-panel p-5 border-slate-800 relative overflow-hidden group">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            <h3 class="font-bold text-white text-base">Autonomous Tracking in NVIDIA Isaac Sim</h3>
+      <div class="rounded-2xl glass-panel p-4 sm:p-5 border-slate-800 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3 sm:mb-4">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse flex-shrink-0"></span>
+            <h3 class="font-bold text-white text-sm sm:text-base truncate">Autonomous Tracking in NVIDIA Isaac Sim</h3>
           </div>
-          <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-cyan-400 border border-slate-700">Ubuntu SITL + ROS2</span>
+          <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-400 border border-slate-700 whitespace-nowrap">Ubuntu SITL + ROS2</span>
         </div>
 
         <div class="relative rounded-xl overflow-hidden bg-black/80 aspect-video border border-slate-800 group-hover:border-cyan-500/40 transition-all">
@@ -241,35 +278,35 @@
             Your browser does not support video playback.
           </video>
           
-          <div class="absolute bottom-3 left-3 right-3 bg-dark-900/80 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 flex justify-between items-center text-xs font-mono">
-            <span class="text-slate-300 flex items-center gap-1.5">
-              <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400"></i> Kamikaze FPV Strike Controller HUD
+          <div class="absolute bottom-3 left-3 right-3 bg-dark-900/85 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 flex justify-between items-center text-[10px] sm:text-xs font-mono">
+            <span class="text-slate-300 flex items-center gap-1.5 truncate">
+              <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i> Kamikaze FPV Strike Controller HUD
             </span>
-            <span class="text-emerald-400">30 FPS Stream</span>
+            <span class="text-emerald-400 whitespace-nowrap">30 FPS Stream</span>
           </div>
         </div>
 
-        <div class="mt-4 space-y-2 text-sm text-slate-300">
+        <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
           <p class="text-xs text-slate-400 leading-relaxed">
             Split-screen architecture: Left window executes the <strong>Kamikaze FPV Strike Controller</strong> with real-time pixel offset calculation ($dx/dy$) and MAVLink manual override. Right window runs <strong>NVIDIA Isaac Sim</strong> physics to validate target acquisition and visual servoing prior to physical field hardware tests.
           </p>
-          <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono">
+          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2 text-[10px] sm:text-xs font-mono">
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PX4 SITL</span>
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">ROS2 Humble</span>
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">MAVLink Bridge</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PyQt6 GCS</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">C# / PyQt6 GCS</span>
           </div>
         </div>
       </div>
 
       <!-- DEMO 2: REAL-TIME TARGET TRACKING -->
-      <div class="rounded-2xl glass-panel p-5 border-slate-800 relative overflow-hidden group">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <h3 class="font-bold text-white text-base">Custom RF-DETR Nano Aerial Tracking</h3>
+      <div class="rounded-2xl glass-panel p-4 sm:p-5 border-slate-800 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3 sm:mb-4">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+            <h3 class="font-bold text-white text-sm sm:text-base truncate">Custom RF-DETR Nano Aerial Tracking</h3>
           </div>
-          <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-emerald-400 border border-slate-700">89.4% mAP@50</span>
+          <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-slate-700 whitespace-nowrap">89.4% mAP@50</span>
         </div>
 
         <div class="relative rounded-xl overflow-hidden bg-black/80 aspect-video border border-slate-800 group-hover:border-emerald-500/40 transition-all">
@@ -278,19 +315,19 @@
             Your browser does not support video playback.
           </video>
           
-          <div class="absolute bottom-3 left-3 right-3 bg-dark-900/80 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 flex justify-between items-center text-xs font-mono">
-            <span class="text-slate-300 flex items-center gap-1.5">
-              <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400"></i> Multi-Part Detection: "tank 0.9235"
+          <div class="absolute bottom-3 left-3 right-3 bg-dark-900/85 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 flex justify-between items-center text-[10px] sm:text-xs font-mono">
+            <span class="text-slate-300 flex items-center gap-1.5 truncate">
+              <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> Multi-Part Detection: "tank 0.9235"
             </span>
-            <span class="text-cyan-400">Sub-22ms Latency</span>
+            <span class="text-cyan-400 whitespace-nowrap">Sub-22ms Latency</span>
           </div>
         </div>
 
-        <div class="mt-4 space-y-2 text-sm text-slate-300">
+        <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
           <p class="text-xs text-slate-400 leading-relaxed">
             Real-time inference and Kalman association tracking of high-velocity armored targets from an aerial perspective. Granular model trained to distinguish between whole vehicles and sub-components (Tank, Turret, and Track) for terminal guidance applications.
           </p>
-          <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono">
+          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2 text-[10px] sm:text-xs font-mono">
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">RF-DETR Nano</span>
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Roboflow Augmentation</span>
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">BoT-SORT</span>
@@ -303,69 +340,69 @@
   </section>
 
   <!-- MODEL EVALUATION & TRAINING BENCHMARKS -->
-  <section id="evaluation" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section id="evaluation" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 mb-3">
         <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i> Model Training & Validation Metrics
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
         Granular Sub-Component Detection Benchmarks
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-3">
+      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
         Instead of treating targets as single bounding boxes, the custom <strong>RF-DETR Nano</strong> model detects granular components (Tank, Turret, Track) to enable precision terminal guidance.
       </p>
     </div>
 
-    <!-- METRICS CARDS -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-      <div class="p-5 rounded-xl glass-panel border-slate-800">
-        <div class="text-xs font-mono text-slate-400">mAP@50 VALIDATION</div>
-        <div class="text-3xl font-extrabold font-mono text-cyan-400 mt-1">89.4%</div>
-        <div class="text-xs text-slate-500 mt-1">Across 50 epochs</div>
+    <!-- METRICS CARDS (Responsive Grid) -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
+      <div class="p-4 sm:p-5 rounded-xl glass-panel border-slate-800">
+        <div class="text-[10px] sm:text-xs font-mono text-slate-400">mAP@50 VALIDATION</div>
+        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyan-400 mt-1">89.4%</div>
+        <div class="text-[10px] sm:text-xs text-slate-500 mt-1">Across 50 epochs</div>
       </div>
-      <div class="p-5 rounded-xl glass-panel border-slate-800">
-        <div class="text-xs font-mono text-slate-400">PRECISION</div>
-        <div class="text-3xl font-extrabold font-mono text-emerald-400 mt-1">86.8%</div>
-        <div class="text-xs text-slate-500 mt-1">Minimal false positives</div>
+      <div class="p-4 sm:p-5 rounded-xl glass-panel border-slate-800">
+        <div class="text-[10px] sm:text-xs font-mono text-slate-400">PRECISION</div>
+        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400 mt-1">86.8%</div>
+        <div class="text-[10px] sm:text-xs text-slate-500 mt-1">Minimal false alarms</div>
       </div>
-      <div class="p-5 rounded-xl glass-panel border-slate-800">
-        <div class="text-xs font-mono text-slate-400">RECALL</div>
-        <div class="text-3xl font-extrabold font-mono text-amber-400 mt-1">89.2%</div>
-        <div class="text-xs text-slate-500 mt-1">Robust target retention</div>
+      <div class="p-4 sm:p-5 rounded-xl glass-panel border-slate-800">
+        <div class="text-[10px] sm:text-xs font-mono text-slate-400">RECALL</div>
+        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-amber-400 mt-1">89.2%</div>
+        <div class="text-[10px] sm:text-xs text-slate-500 mt-1">Target retention</div>
       </div>
-      <div class="p-5 rounded-xl glass-panel border-slate-800">
-        <div class="text-xs font-mono text-slate-400">F1-SCORE</div>
-        <div class="text-3xl font-extrabold font-mono text-purple-400 mt-1">88.0%</div>
-        <div class="text-xs text-slate-500 mt-1">Harmonic mean score</div>
+      <div class="p-4 sm:p-5 rounded-xl glass-panel border-slate-800">
+        <div class="text-[10px] sm:text-xs font-mono text-slate-400">F1-SCORE</div>
+        <div class="text-2xl sm:text-3xl font-extrabold font-mono text-purple-400 mt-1">88.0%</div>
+        <div class="text-[10px] sm:text-xs text-slate-500 mt-1">Harmonic mean</div>
       </div>
     </div>
 
     <!-- SIDE-BY-SIDE EVALUATION IMAGES -->
-    <div class="grid lg:grid-cols-2 gap-8 items-center">
+    <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
       
-      <!-- EVALUATION 1: SUB-COMPONENT DETECTION & JSON -->
-      <div class="rounded-2xl glass-panel p-5 border-slate-800">
-        <h3 class="text-sm font-bold font-mono text-white mb-3 flex items-center gap-2">
+      <!-- EVALUATION 1: SUB-COMPONENT DETECTION -->
+      <div class="rounded-2xl glass-panel p-4 sm:p-5 border-slate-800">
+        <h3 class="text-xs sm:text-sm font-bold font-mono text-white mb-3 flex items-center gap-2">
           <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i> Hierarchical Sub-Component Detection
         </h3>
         <div class="rounded-xl overflow-hidden border border-slate-800 bg-black/60">
-          <img src="assets/images/rf_detr_eval.png" alt="RF-DETR Evaluation" class="w-full object-contain">
+          <img src="assets/images/rf_detr_eval.png" alt="RF-DETR Evaluation" class="w-full object-contain max-h-96 mx-auto">
         </div>
-        <div class="mt-4 font-mono text-xs text-slate-400 space-y-1">
+        <div class="mt-4 font-mono text-[11px] sm:text-xs text-slate-400 space-y-1">
           <p><span class="text-emerald-400">● Tank:</span> 89.0% AP | <span class="text-cyan-400">● Turret:</span> 97.0% AP | <span class="text-amber-400">● Track:</span> 69.0% AP</p>
           <p class="text-slate-500">Outputs normalized JSON telemetry stream for companion computer guidance loops.</p>
         </div>
       </div>
 
       <!-- EVALUATION 2: TRAINING LOSS CURVES -->
-      <div class="rounded-2xl glass-panel p-5 border-slate-800">
-        <h3 class="text-sm font-bold font-mono text-white mb-3 flex items-center gap-2">
+      <div class="rounded-2xl glass-panel p-4 sm:p-5 border-slate-800">
+        <h3 class="text-xs sm:text-sm font-bold font-mono text-white mb-3 flex items-center gap-2">
           <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i> 50-Epoch Convergence & Loss Curves
         </h3>
         <div class="rounded-xl overflow-hidden border border-slate-800 bg-white/95 p-2">
-          <img src="assets/images/rf_detr_training_curves.png" alt="Training Graphs" class="w-full object-contain">
+          <img src="assets/images/rf_detr_training_curves.png" alt="Training Graphs" class="w-full object-contain max-h-96 mx-auto">
         </div>
-        <div class="mt-4 font-mono text-xs text-slate-400 space-y-1">
+        <div class="mt-4 font-mono text-[11px] sm:text-xs text-slate-400 space-y-1">
           <p class="text-slate-300">Smooth convergence across Box Location Loss, Class Loss, and Overlap Loss.</p>
           <p class="text-slate-500">Trained with Roboflow data augmentations (scaling, rotation, brightness) for outdoor robustness.</p>
         </div>
@@ -375,15 +412,15 @@
   </section>
 
   <!-- ADVANCED R&D & HARDWARE INITIATIVES -->
-  <section id="research" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section id="research" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-400 mb-3">
         <i data-lucide="microchip" class="w-3.5 h-3.5"></i> UAV Lab Initiatives & Embedded Hardware
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
         Hardware Integration & Advanced Robotics R&D
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-3">
+      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
         Hands-on engineering across companion computers, dual-camera depth estimation, gimbal controllers, and GPS-denied autonomous navigation.
       </p>
     </div>
@@ -391,7 +428,7 @@
     <div class="grid lg:grid-cols-3 gap-6">
 
       <!-- CARD 1: STEREO DEPTH ESTIMATION -->
-      <div class="rounded-2xl glass-panel p-6 border-slate-800 flex flex-col justify-between">
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
@@ -403,7 +440,7 @@
           <h3 class="text-base font-bold text-white mb-2">Dual-Camera Stereo Depth Estimation</h3>
           <p class="text-xs text-slate-400 leading-relaxed mb-4">
             Developed a dual MIPI-CSI camera setup on Raspberry Pi 5 to calculate real-time target distance and dimensions without relying on heavy LiDAR payloads:
-            <span class="block font-mono text-cyan-300 mt-2 p-2 rounded bg-slate-900 border border-slate-800 text-center">Depth = (focal_length × baseline) / disparity</span>
+            <span class="block font-mono text-cyan-300 mt-2 p-2 rounded bg-slate-900 border border-slate-800 text-center text-[11px] sm:text-xs">Depth = (focal_length × baseline) / disparity</span>
           </p>
 
           <div class="grid grid-cols-2 gap-2 mt-4">
@@ -422,7 +459,7 @@
       </div>
 
       <!-- CARD 2: GPS-DENIED SLAM & VLA -->
-      <div class="rounded-2xl glass-panel p-6 border-slate-800 flex flex-col justify-between">
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -458,7 +495,7 @@
       </div>
 
       <!-- CARD 3: GIMBAL, SENSOR & SWARM NETWORKING -->
-      <div class="rounded-2xl glass-panel p-6 border-slate-800 flex flex-col justify-between">
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
@@ -477,7 +514,7 @@
               <span class="text-amber-400 font-semibold">BaseCam Gimbal:</span> Serial protocol integration for 3-axis target tracking stability.
             </div>
             <div class="p-2 rounded bg-slate-900 border border-slate-800">
-              <span class="text-cyan-400 font-semibold">ViewLink Pro SDK:</span> C++ camera integration parsing raw telemetry into PyQt6.
+              <span class="text-cyan-400 font-semibold">ViewLink Pro SDK:</span> C++ camera integration parsing raw telemetry into C# & PyQt6.
             </div>
             <div class="p-2 rounded bg-slate-900 border border-slate-800">
               <span class="text-emerald-400 font-semibold">Tailscale Meshnet:</span> Low-latency RTSP streaming over internet (NRTC Play App).
@@ -494,23 +531,23 @@
   </section>
 
   <!-- FLAGSHIP CASE STUDIES -->
-  <section id="architectures" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section id="architectures" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-3">
         <i data-lucide="boxes" class="w-3.5 h-3.5"></i> Production Repositories
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
         Flagship Open-Source Case Studies
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-3">
+      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
         Each project repository includes production ASCII architecture diagrams, benchmark verification data, and runnable reproduction scripts.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- PROJECT CARD 1 -->
-      <div class="rounded-2xl glass-panel p-6 border-slate-800 flex flex-col justify-between group hover:border-cyan-500/50 transition-all">
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between group hover:border-cyan-500/50 transition-all">
         <div>
           <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-105 transition-transform">
             <i data-lucide="send" class="w-6 h-6"></i>
@@ -545,7 +582,7 @@
       </div>
 
       <!-- PROJECT CARD 2 -->
-      <div class="rounded-2xl glass-panel p-6 border-slate-800 flex flex-col justify-between group hover:border-emerald-500/50 transition-all">
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between group hover:border-emerald-500/50 transition-all">
         <div>
           <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-105 transition-transform">
             <i data-lucide="eye" class="w-6 h-6"></i>
@@ -579,30 +616,30 @@
         </div>
       </div>
 
-      <!-- PROJECT CARD 3 -->
-      <div class="rounded-2xl glass-panel p-6 border-slate-800 flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+      <!-- PROJECT CARD 3: C# (.NET) & PYQT6 GCS -->
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between group hover:border-amber-500/50 transition-all md:col-span-2 lg:col-span-1">
         <div>
           <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-105 transition-transform">
             <i data-lucide="gauge" class="w-6 h-6"></i>
           </div>
-          <span class="text-xs font-mono text-amber-400">GROUND CONTROL SOFTWARE</span>
-          <h3 class="text-lg font-bold text-white mt-1 mb-2">High-Throughput Ground Station</h3>
+          <span class="text-xs font-mono text-amber-400">C# (.NET) & PYQT6 GROUND CONTROL</span>
+          <h3 class="text-lg font-bold text-white mt-1 mb-2">High-Throughput Ground Station (C# / PyQt6)</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Modular desktop GCS consuming 50–60 Hz telemetry feeds without event loop stutter. Uses decoupled QThread telemetry workers and throttled 20 Hz state aggregators with emergency bypass.
+            Modular desktop GCS engineered in <strong>C# (.NET)</strong> and <strong>PyQt6</strong> to consume 50–60 Hz telemetry feeds without event loop stutter. Uses decoupled C# Task Parallel Library (TPL) / Python QThread workers and throttled 20 Hz state aggregators with emergency bypass.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
             <div class="flex justify-between">
+              <span class="text-slate-500">Core Stack:</span>
+              <span class="text-amber-400">C# (.NET) + PyQt6</span>
+            </div>
+            <div class="flex justify-between">
               <span class="text-slate-500">Ingestion:</span>
-              <span class="text-amber-400">50-60 Hz ZMQ Pub/Sub</span>
+              <span class="text-slate-300">50-60 Hz ZMQ Pub/Sub</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500">UI Render:</span>
-              <span class="text-slate-300">20 Hz Decoupled Loop</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-500">CPU Savings:</span>
-              <span class="text-emerald-400">~40% Load Reduction</span>
+              <span class="text-slate-500">UI Performance:</span>
+              <span class="text-emerald-400">20 Hz Decoupled Loop (-40% CPU)</span>
             </div>
           </div>
         </div>
@@ -618,62 +655,62 @@
   </section>
 
   <!-- SYSTEM DESIGN DEEP DIVE -->
-  <section id="deep-dive" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section id="deep-dive" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-400 mb-3">
         <i data-lucide="layers" class="w-3.5 h-3.5"></i> Architecture Deep Dive
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
         Solving Non-Trivial Real-Time Constraints
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-3">
+      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
         How hardware-software decoupling solves event loop starvation and latency jitter in production systems.
       </p>
     </div>
 
     <!-- INTERACTIVE TABBED CONTAINER -->
-    <div class="glass-panel rounded-2xl p-6 sm:p-8 border-slate-800">
-      <div class="flex flex-wrap gap-3 border-b border-slate-800 pb-4 mb-6" id="tab-buttons">
-        <button onclick="switchTab('telemetry')" id="btn-telemetry" class="px-4 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all">
-          1. Telemetry Ingestion Decoupling (PyQt6 / ZMQ)
+    <div class="glass-panel rounded-2xl p-4 sm:p-8 border-slate-800">
+      <div class="flex flex-wrap gap-2 sm:gap-3 border-b border-slate-800 pb-4 mb-6" id="tab-buttons">
+        <button onclick="switchTab('telemetry')" id="btn-telemetry" class="px-3 sm:px-4 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-[11px] sm:text-xs font-mono font-semibold transition-all">
+          1. Telemetry Ingestion Decoupling (C# .NET / PyQt6 & ZMQ)
         </button>
-        <button onclick="switchTab('vision')" id="btn-vision" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-xs font-mono font-semibold hover:text-slate-200 transition-all">
+        <button onclick="switchTab('vision')" id="btn-vision" class="px-3 sm:px-4 py-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-[11px] sm:text-xs font-mono font-semibold hover:text-slate-200 transition-all">
           2. Zero-Copy Vision Pipeline (Jetson / Coral / NPU)
         </button>
-        <button onclick="switchTab('simulation')" id="btn-simulation" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-xs font-mono font-semibold hover:text-slate-200 transition-all">
+        <button onclick="switchTab('simulation')" id="btn-simulation" class="px-3 sm:px-4 py-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-[11px] sm:text-xs font-mono font-semibold hover:text-slate-200 transition-all">
           3. Closed-Loop SITL Digital Twin (PX4 + Isaac Sim)
         </button>
       </div>
 
       <!-- TAB 1 CONTENT: TELEMETRY -->
       <div id="tab-telemetry" class="space-y-6">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div class="space-y-4 text-sm text-slate-300">
-            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+        <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+            <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i> The Challenge: UI Thread Starvation at 60 Hz
             </h4>
             <p class="text-xs text-slate-400 leading-relaxed">
-              When raw MAVLink telemetry packets are emitted at 50–60 Hz across multiple UAV channels, streaming them directly into the GUI thread causes the Qt event loop to choke on repetitive paint calls, producing visual lag and delaying critical operator inputs.
+              When raw MAVLink telemetry packets are emitted at 50–60 Hz across multiple UAV channels, streaming them directly into the GUI thread causes the desktop event loop (WPF/Avalonia or PyQt6) to choke on repetitive paint calls, producing visual lag and delaying critical operator inputs.
             </p>
-            <h4 class="text-lg font-bold text-white flex items-center gap-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> The Solution: Aggregated Circular Ring Buffer
+            <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> The Solution: C# TPL / Python Decoupled Buffer
             </h4>
             <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside leading-relaxed">
-              <li><strong>Dedicated Ingestion QThread:</strong> Consumes non-blocking ZMQ/MAVLink messages at full 60 Hz rate into a thread-safe mutex-protected state dictionary.</li>
+              <li><strong>Dedicated Ingestion Pipeline:</strong> Uses C# asynchronous Channels (`System.Threading.Channels`) or Python background `QThread` to consume non-blocking ZMQ/MAVLink messages at full 60 Hz rate into a thread-safe atomic state store.</li>
               <li><strong>Throttled 20 Hz Render Timer:</strong> Flushes the aggregated state snapshot to the UI at a deterministic 20 Hz rate, matching human visual perception while freeing 40% CPU overhead.</li>
               <li><strong>Zero-Latency Safety Bypass Queue:</strong> Failsafe alarms and emergency triggers (e.g., Return-to-Launch, Geofence breach) bypass the aggregator and immediately signal the main event loop.</li>
             </ul>
           </div>
           
-          <div class="rounded-xl bg-dark-900 p-4 border border-slate-800 font-mono text-xs overflow-x-auto text-slate-300">
-            <div class="text-slate-500 mb-2">// Multi-Threaded Telemetry Architecture</div>
+          <div class="rounded-xl bg-dark-900 p-3 sm:p-4 border border-slate-800 font-mono text-[11px] sm:text-xs overflow-x-auto text-slate-300">
+            <div class="text-slate-500 mb-2">// Multi-Threaded Telemetry Architecture (C# .NET & Python)</div>
 <pre class="leading-relaxed text-cyan-300">
 [ UAV MAVLink Stream (50-60 Hz) ]
                │
                ▼
 ┌──────────────────────────────────────────────┐
-│  Network Worker QThread (Non-blocking ZMQ)   │
-│  - Packet deserialization & CRC verification │
+│  Network Worker (C# Channel / Python QThread)│
+│  - Non-blocking ZMQ socket poll & CRC check  │
 └──────────────────────┬───────────────────────┘
                        │
        ┌───────────────┴───────────────┐
@@ -681,11 +718,11 @@
 [ Telemetry Ring Buffer ]      [ High-Priority Bypass ]
 (Atomic State @ 50 Hz)         (Emergency / Safety Alarms)
        │                               │
-       ▼ (Aggregated @ 20 Hz)          ▼ (Instant Signal)
+       ▼ (Aggregated @ 20 Hz)          ▼ (Instant Event/Signal)
 ┌──────────────────────────────────────────────┐
-│  PyQt6 Main Event Loop                       │
+│  Desktop UI (WPF/.NET or PyQt6)              │
 │  - 20 Hz Instrument & Map Paint (0% lag)     │
-│  - Zero-latency Emergency Handler            │
+│  - Instant Emergency Motor Cutoff Handler    │
 └──────────────────────────────────────────────┘
 </pre>
           </div>
@@ -694,15 +731,15 @@
 
       <!-- TAB 2 CONTENT: VISION -->
       <div id="tab-vision" class="hidden space-y-6">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div class="space-y-4 text-sm text-slate-300">
-            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+        <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+            <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i> Zero-Copy Edge Ingestion & Hardware Memory
             </h4>
             <p class="text-xs text-slate-400 leading-relaxed">
               Standard OpenCV image decoding copies pixels through the CPU, introducing 15-25ms latency per frame before inference even starts. On companion computers like Jetson Orin or Rockchip RK3588, this exhausts thermal budgets.
             </p>
-            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+            <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Hardware-Accelerated Zero-Copy Memory
             </h4>
             <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside leading-relaxed">
@@ -712,7 +749,7 @@
             </ul>
           </div>
           
-          <div class="rounded-xl bg-dark-900 p-4 border border-slate-800 font-mono text-xs overflow-x-auto text-slate-300">
+          <div class="rounded-xl bg-dark-900 p-3 sm:p-4 border border-slate-800 font-mono text-[11px] sm:text-xs overflow-x-auto text-slate-300">
             <div class="text-slate-500 mb-2">// Zero-Copy Hardware Pipeline</div>
 <pre class="leading-relaxed text-emerald-400">
 [ Sony IMX Camera ] ──(MIPI-CSI Raw Data)──► [ Hardware ISP ]
@@ -734,15 +771,15 @@
 
       <!-- TAB 3 CONTENT: SIMULATION -->
       <div id="tab-simulation" class="hidden space-y-6">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div class="space-y-4 text-sm text-slate-300">
-            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+        <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+            <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i> High-Fidelity Pre-Flight Verification
             </h4>
             <p class="text-xs text-slate-400 leading-relaxed">
               Physical drone flight tests for autonomous target tracking carry severe hardware crash risks and unpredictable wind/lighting variables. Developing algorithms directly on hardware slows iteration cycles.
             </p>
-            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+            <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Closed-Loop Digital Twin Architecture
             </h4>
             <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside leading-relaxed">
@@ -752,7 +789,7 @@
             </ul>
           </div>
           
-          <div class="rounded-xl bg-dark-900 p-4 border border-slate-800 font-mono text-xs overflow-x-auto text-slate-300">
+          <div class="rounded-xl bg-dark-900 p-3 sm:p-4 border border-slate-800 font-mono text-[11px] sm:text-xs overflow-x-auto text-slate-300">
             <div class="text-slate-500 mb-2">// Closed-Loop Digital Twin Flow</div>
 <pre class="leading-relaxed text-purple-300">
 ┌─────────────────────────────────────────────────────────────┐
@@ -777,41 +814,41 @@
   </section>
 
   <!-- TECHNICAL TOOLKIT MATRIX -->
-  <section id="toolkit" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section id="toolkit" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 mb-3">
         <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Engineering Competencies
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
         Technical Toolkit & Hardware Matrix
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-3">
+      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
         Technologies, protocols, and embedded platforms utilized across commercial UAV and vision projects.
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
-      <!-- TOOLKIT 1 -->
-      <div class="rounded-xl glass-panel p-5 border-slate-800">
+      <!-- TOOLKIT 1: LANGUAGES & CORE -->
+      <div class="rounded-xl glass-panel p-4 sm:p-5 border-slate-800">
         <div class="flex items-center gap-2 mb-3 text-cyan-400 font-mono text-xs font-bold">
           <i data-lucide="terminal" class="w-4 h-4"></i> LANGUAGES & CORE
         </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold">C# (.NET)</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Python</span>
-          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">C# (.NET)</span>
-          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">TypeScript</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">C++17/20</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">TypeScript</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Bash / Shell</span>
         </div>
       </div>
 
-      <!-- TOOLKIT 2 -->
-      <div class="rounded-xl glass-panel p-5 border-slate-800">
+      <!-- TOOLKIT 2: ROBOTICS & SIMULATION -->
+      <div class="rounded-xl glass-panel p-4 sm:p-5 border-slate-800">
         <div class="flex items-center gap-2 mb-3 text-emerald-400 font-mono text-xs font-bold">
           <i data-lucide="radio" class="w-4 h-4"></i> ROBOTICS & SIMULATION
         </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">ROS / ROS2 Humble</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">NVIDIA Isaac Sim</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Gazebo</span>
@@ -821,12 +858,12 @@
         </div>
       </div>
 
-      <!-- TOOLKIT 3 -->
-      <div class="rounded-xl glass-panel p-5 border-slate-800">
+      <!-- TOOLKIT 3: EDGE AI & VISION -->
+      <div class="rounded-xl glass-panel p-4 sm:p-5 border-slate-800">
         <div class="flex items-center gap-2 mb-3 text-purple-400 font-mono text-xs font-bold">
           <i data-lucide="cpu" class="w-4 h-4"></i> EDGE AI & COMPUTER VISION
         </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">RF-DETR Nano</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">TensorRT</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">YOLOv8 / YOLOv11</span>
@@ -836,12 +873,12 @@
         </div>
       </div>
 
-      <!-- TOOLKIT 4 -->
-      <div class="rounded-xl glass-panel p-5 border-slate-800">
+      <!-- TOOLKIT 4: NETWORKING & TELEMETRY -->
+      <div class="rounded-xl glass-panel p-4 sm:p-5 border-slate-800">
         <div class="flex items-center gap-2 mb-3 text-amber-400 font-mono text-xs font-bold">
           <i data-lucide="network" class="w-4 h-4"></i> NETWORKING & TELEMETRY
         </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">ZeroMQ (ZMQ)</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">MQTT</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Tailscale Mesh</span>
@@ -850,26 +887,26 @@
         </div>
       </div>
 
-      <!-- TOOLKIT 5 -->
-      <div class="rounded-xl glass-panel p-5 border-slate-800">
+      <!-- TOOLKIT 5: FRONTEND & GCS UI -->
+      <div class="rounded-xl glass-panel p-4 sm:p-5 border-slate-800">
         <div class="flex items-center gap-2 mb-3 text-blue-400 font-mono text-xs font-bold">
-          <i data-lucide="layout" class="w-4 h-4"></i> FRONTEND & SYSTEMS UI
+          <i data-lucide="layout" class="w-4 h-4"></i> GCS & SYSTEMS UI
         </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-bold">C# (WPF / .NET)</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">PyQt6</span>
-          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">React.js</span>
-          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Next.js</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Electron.js</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">React.js</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Tailwind CSS</span>
         </div>
       </div>
 
-      <!-- TOOLKIT 6 -->
-      <div class="rounded-xl glass-panel p-5 border-slate-800">
+      <!-- TOOLKIT 6: HARDWARE & COMPUTE -->
+      <div class="rounded-xl glass-panel p-4 sm:p-5 border-slate-800">
         <div class="flex items-center gap-2 mb-3 text-rose-400 font-mono text-xs font-bold">
           <i data-lucide="hard-drive" class="w-4 h-4"></i> COMPUTE & HARDWARE
         </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Jetson AGX Orin</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Raspberry Pi 5</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Pixhawk 6C/6X</span>
@@ -882,37 +919,50 @@
   </section>
 
   <!-- CONTACT & FOOTER -->
-  <footer class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/80">
-    <div class="glass-panel rounded-2xl p-8 sm:p-12 border-slate-800 text-center relative overflow-hidden accent-glow">
-      <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/80">
+    <div class="glass-panel rounded-2xl p-6 sm:p-12 border-slate-800 text-center relative overflow-hidden accent-glow">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight mb-2 sm:mb-3">
         Let's Build Reliable Autonomous Systems Together
       </h2>
-      <p class="text-slate-400 text-sm max-w-xl mx-auto mb-6">
+      <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-6">
         Whether you are scaling edge AI perception, architecting high-frequency UAV telemetry pipelines, or building digital twin simulations, feel free to connect.
       </p>
 
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="mailto:anaseer.ce41ceme@ce.ceme.edu.pk" class="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2">
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+        <a href="mailto:anaseer.ce41ceme@ce.ceme.edu.pk" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2">
           <i data-lucide="mail" class="w-4 h-4"></i> anaseer.ce41ceme@ce.ceme.edu.pk
         </a>
-        <a href="https://linkedin.com/in/amanullah7x" target="_blank" class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm transition-all border border-slate-700 flex items-center gap-2">
+        <a href="https://linkedin.com/in/amanullah7x" target="_blank" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs sm:text-sm transition-all border border-slate-700 flex items-center gap-2">
           <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
         </a>
-        <a href="https://github.com/amanullah7x" target="_blank" class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm transition-all border border-slate-700 flex items-center gap-2">
+        <a href="https://github.com/amanullah7x" target="_blank" class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs sm:text-sm transition-all border border-slate-700 flex items-center gap-2">
           <i data-lucide="github" class="w-4 h-4"></i> GitHub
         </a>
       </div>
 
-      <div class="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-500 font-mono flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="mt-8 pt-6 border-t border-slate-800 text-[10px] sm:text-xs text-slate-500 font-mono flex flex-col sm:flex-row justify-between items-center gap-2">
         <span>© 2026 Amanullah Naseer. All rights reserved.</span>
         <span>Rawalpindi, Pakistan • Built for Engineering Excellence</span>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT FOR TABS & ICONS -->
+  <!-- SCRIPT FOR TABS, MOBILE MENU & ICONS -->
   <script>
     lucide.createIcons();
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        menu.classList.add('hidden');
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.createIcons();
+    }
 
     function switchTab(tabId) {
       const tabs = ['telemetry', 'vision', 'simulation'];
@@ -921,10 +971,10 @@
         const btn = document.getElementById('btn-' + t);
         if (t === tabId) {
           content.classList.remove('hidden');
-          btn.className = "px-4 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all";
+          btn.className = "px-3 sm:px-4 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-[11px] sm:text-xs font-mono font-semibold transition-all";
         } else {
           content.classList.add('hidden');
-          btn.className = "px-4 py-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-xs font-mono font-semibold hover:text-slate-200 transition-all";
+          btn.className = "px-3 sm:px-4 py-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-[11px] sm:text-xs font-mono font-semibold hover:text-slate-200 transition-all";
         }
       });
       lucide.createIcons();
