@@ -288,7 +288,7 @@
 
         <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
           <p class="text-xs text-slate-400 leading-relaxed">
-            Split-screen architecture: Left window executes the <strong>Autonomous Aerial Tracking & Visual Servoing GCS</strong> with real-time pixel offset calculation ($dx/dy$) and MAVLink manual override. Right window runs <strong>NVIDIA Isaac Sim</strong> physics to validate target acquisition and visual servoing prior to physical field hardware tests.
+            Split-screen architecture: Left window executes the <strong>Autonomous Aerial Tracking & Visual Servoing GCS</strong> with real-time pixel offset calculation ($dx/dy$) and MAVLink manual override. Right window runs <strong>NVIDIA Isaac Sim</strong> physics to validate autonomous following and visual navigation prior to physical field hardware tests.
           </p>
           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2 text-[10px] sm:text-xs font-mono">
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PX4 SITL</span>
@@ -415,90 +415,7 @@
     </div>
   </section>
 
-  <!-- ADVANCED R&D & HARDWARE INITIATIVES -->
-  <section id="research" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
-    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-400 mb-3">
-        <i data-lucide="microchip" class="w-3.5 h-3.5"></i> UAV Lab Initiatives & Embedded Hardware
-      </div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-        Hardware Integration & Advanced Robotics R&D
-      </h2>
-      <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
-        Hands-on engineering across companion computers, dual-camera depth estimation, gimbal controllers, and GPS-denied autonomous navigation.
-      </p>
-    </div>
 
-    <div class="grid lg:grid-cols-2 gap-6">
-
-      <!-- CARD 1: STEREO DEPTH ESTIMATION -->
-      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-              <i data-lucide="aperture" class="w-5 h-5"></i>
-            </div>
-            <span class="text-xs font-mono text-cyan-400 px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Lightweight Payload</span>
-          </div>
-
-          <h3 class="text-base font-bold text-white mb-2">Dual-Camera Stereo Depth Estimation</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Developed a dual MIPI-CSI camera setup on Raspberry Pi 5 to calculate real-time target distance and dimensions without relying on heavy LiDAR payloads:
-            <span class="block font-mono text-cyan-300 mt-2 p-2 rounded bg-slate-900 border border-slate-800 text-center text-[11px] sm:text-xs">Depth = (focal_length × baseline) / disparity</span>
-          </p>
-
-          <div class="grid grid-cols-2 gap-2 mt-4">
-            <div class="rounded-lg overflow-hidden border border-slate-800 bg-white p-1">
-              <img src="assets/images/stereo_depth_diagram.png" alt="Stereo Disparity Formula" class="w-full h-24 object-contain">
-            </div>
-            <div class="rounded-lg overflow-hidden border border-slate-800 bg-black/40 flex items-center justify-center p-1">
-              <img src="assets/images/stereo_hardware_rpi.png" alt="Stereo RPi Hardware" class="w-full h-24 object-contain">
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
-          Replaces 500g LiDAR with dual 25g camera modules for tactical FPVs.
-        </div>
-      </div>
-
-
-
-      <!-- CARD 3: GIMBAL, SENSOR & SWARM NETWORKING -->
-      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-              <i data-lucide="radio" class="w-5 h-5"></i>
-            </div>
-            <span class="text-xs font-mono text-amber-400 px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Lab & Production</span>
-          </div>
-
-          <h3 class="text-base font-bold text-white mb-2">Gimbal SDK & Swarm Network Mesh</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Production field engineering delivering server-client architectures for swarm drones, custom payload SDK integration, and zero-latency video streaming across field devices:
-          </p>
-
-          <div class="space-y-2 text-xs font-mono text-slate-300">
-            <div class="p-2 rounded bg-slate-900 border border-slate-800">
-              <span class="text-amber-400 font-semibold">BaseCam Gimbal:</span> Serial protocol integration for 3-axis target tracking stability.
-            </div>
-            <div class="p-2 rounded bg-slate-900 border border-slate-800">
-              <span class="text-cyan-400 font-semibold">ViewLink Pro SDK:</span> C++ camera integration parsing raw telemetry into C# & PyQt6.
-            </div>
-            <div class="p-2 rounded bg-slate-900 border border-slate-800">
-              <span class="text-emerald-400 font-semibold">Tailscale Meshnet:</span> Low-latency RTSP streaming over internet (Tactical Mobile Companion App).
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
-          Companion AI: Raspberry Pi 5 + Google Coral EdgeTPU (MobileNet ONNX).
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- FLAGSHIP CASE STUDIES -->
   <section id="architectures" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-slate-800/60">
