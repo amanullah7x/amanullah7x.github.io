@@ -512,7 +512,7 @@
           <span class="text-xs font-mono text-amber-400">C# (.NET) & PYQT6 GROUND CONTROL</span>
           <h3 class="text-lg font-bold text-white mt-1 mb-2">High-Throughput Ground Station (C# / PyQt6) Desktop GCS Application</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Modular desktop GCS engineered in <strong>C# (.NET)</strong> and <strong>PyQt6</strong> to consume 50–60 Hz telemetry feeds without event loop stutter. Uses decoupled C# Task Parallel Library (TPL) / Python QThread workers and throttled 20 Hz state aggregators with emergency bypass.
+            Modular desktop GCS engineered in <strong>C# (.NET)</strong> and <strong>PyQt6</strong> to consume 50–60 Hz telemetry and drone RTSP video streams. Integrated <strong>YOLOv8</strong> on a ground-station Jetson AGX Orin to process the incoming video feed, achieving 8–10ms inference latency for person detection without UI event loop stutter.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
@@ -790,7 +790,7 @@
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">YOLOv8 / YOLOv11</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Roboflow</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">OpenCV</span>
-
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Google Coral</span>
         </div>
       </div>
 
@@ -829,6 +829,8 @@
         </div>
         <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Jetson AGX Orin</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Raspberry Pi 5</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Google Coral</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Pixhawk 6C/6X</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">ESP32</span>
         </div>
