@@ -319,13 +319,13 @@
             <span class="text-slate-300 flex items-center gap-1.5 truncate">
               <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> Multi-Part Detection: "tank 0.9235"
             </span>
-            <span class="text-cyan-400 whitespace-nowrap">Sub-22ms Latency</span>
+            <span class="text-cyan-400 whitespace-nowrap">Sub-22ms Latency on Jetson AGX Orin (Including Tracking)</span>
           </div>
         </div>
 
         <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
           <p class="text-xs text-slate-400 leading-relaxed">
-            Real-time inference and Kalman association tracking of high-velocity armored targets from an aerial perspective. Granular model trained to distinguish between whole vehicles and sub-components (Tank, Turret, and Track) for terminal guidance applications.
+            Real-time inference and Kalman association tracking of ground vehicles from an aerial perspective. Granular model trained to distinguish between vehicles and sub-components for robust aerial vehicle detection and tracking.
           </p>
           <div class="p-2 rounded bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
             <i data-lucide="info" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i>
@@ -353,7 +353,7 @@
         Granular Sub-Component Detection Benchmarks
       </h2>
       <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
-        Instead of treating targets as single bounding boxes, the custom <strong>RF-DETR Nano</strong> model detects granular components (Tank, Turret, Track) to enable precision terminal guidance.
+        Instead of treating targets as single bounding boxes, the custom <strong>RF-DETR Nano</strong> model detects granular vehicle components to enable precise aerial vehicle detection and tracking.
       </p>
     </div>
 
@@ -393,7 +393,7 @@
           <img src="assets/images/rf_detr_eval.png" alt="RF-DETR Evaluation" class="w-full object-contain max-h-96 mx-auto">
         </div>
         <div class="mt-4 font-mono text-[11px] sm:text-xs text-slate-400 space-y-1">
-          <p><span class="text-emerald-400">● Tank:</span> 89.0% AP | <span class="text-cyan-400">● Turret:</span> 97.0% AP | <span class="text-amber-400">● Track:</span> 69.0% AP</p>
+          <p><span class="text-emerald-400">● Class 0:</span> 100% AP | <span class="text-cyan-400">● Class 1:</span> 69% AP | <span class="text-amber-400">● Class 2:</span> 97% AP | <span class="text-rose-400">● Class 3:</span> 87% AP | <span class="text-purple-400">● Class 4:</span> 94% AP</p>
           <p class="text-slate-500">Outputs normalized JSON telemetry stream for companion computer guidance loops.</p>
         </div>
       </div>
@@ -408,7 +408,7 @@
         </div>
         <div class="mt-4 font-mono text-[11px] sm:text-xs text-slate-400 space-y-1">
           <p class="text-slate-300">Smooth convergence across Box Location Loss, Class Loss, and Overlap Loss.</p>
-          <p class="text-slate-500">Trained with Roboflow data augmentations (scaling, rotation, brightness) for outdoor robustness.</p>
+          <p class="text-slate-500">Custom PyTorch-based model trained via Roboflow, utilizing data augmentations (scaling, rotation, brightness) for outdoor robustness.</p>
         </div>
       </div>
 
