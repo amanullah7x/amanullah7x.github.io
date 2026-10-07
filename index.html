@@ -181,7 +181,7 @@
         </h2>
 
         <p class="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl font-light">
-          I build end-to-end intelligent flight and perception systems operating under rigorous physical constraints. My work bridges <span class="text-cyan-300 font-medium">PX4/ArduPilot</span> autopilot integration, <span class="text-emerald-300 font-medium">NVIDIA Isaac Sim</span> digital twins, <span class="text-cyan-300 font-medium">RF-DETR / TensorRT</span> sub-component tracking on Jetson & Coral EdgeTPU, and high-performance <span class="text-purple-300 font-medium">C# (.NET) & PyQt6</span> ground control stations consuming 50+ Hz telemetry feeds without event loop stutter.
+          I build end-to-end intelligent flight and perception systems operating under rigorous physical constraints. My work bridges <span class="text-cyan-300 font-medium">PX4/ArduPilot</span> autopilot integration, <span class="text-emerald-300 font-medium">NVIDIA Isaac Sim</span> digital twins, custom <span class="text-cyan-300 font-medium">RF-DETR</span> aerial detection models trained and validated on Roboflow, and high-performance <span class="text-purple-300 font-medium">C# (.NET) & PyQt6</span> ground control stations consuming 50+ Hz telemetry feeds without event loop stutter.
         </p>
 
         <!-- ACTION BUTTONS -->
@@ -212,8 +212,8 @@
             <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">Decoupled UI Render</div>
           </div>
           <div class="p-3.5 sm:p-4 rounded-xl glass-panel border-slate-800">
-            <div class="text-xl sm:text-2xl font-bold font-mono text-purple-400">&lt;22ms</div>
-            <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">Edge Inference Latency</div>
+            <div class="text-xl sm:text-2xl font-bold font-mono text-purple-400">5 Classes</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-mono mt-1">Hierarchical Detection</div>
           </div>
         </div>
       </div>
@@ -253,10 +253,10 @@
         <i data-lucide="video" class="w-3.5 h-3.5"></i> Verified Field & Simulation Evidence
       </div>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
-        Simulation & Real-Time Aerial Perception Output
+        Simulation & Aerial Perception Output
       </h2>
       <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
-        Actual recordings validating closed-loop Software-in-the-Loop (SITL) flight control and real-time aerial target tracking pipelines.
+        Actual recordings validating closed-loop Software-in-the-Loop (SITL) flight control and aerial vehicle detection pipelines.
       </p>
     </div>
 
@@ -299,12 +299,12 @@
         </div>
       </div>
 
-      <!-- DEMO 2: REAL-TIME TARGET TRACKING -->
+      <!-- DEMO 2: AERIAL VEHICLE DETECTION -->
       <div class="rounded-2xl glass-panel p-4 sm:p-5 border-slate-800 relative overflow-hidden group">
         <div class="flex items-center justify-between mb-3 sm:mb-4">
           <div class="flex items-center gap-2 min-w-0">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
-            <h3 class="font-bold text-white text-sm sm:text-base truncate">Custom RF-DETR Nano Aerial Tracking</h3>
+            <h3 class="font-bold text-white text-sm sm:text-base truncate">Custom RF-DETR Nano Aerial Vehicle Detection</h3>
           </div>
           <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-slate-700 whitespace-nowrap">89.4% mAP@50</span>
         </div>
@@ -319,23 +319,23 @@
             <span class="text-slate-300 flex items-center gap-1.5 truncate">
               <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> Multi-Part Detection: "tank 0.9235"
             </span>
-            <span class="text-cyan-400 whitespace-nowrap">Sub-22ms Latency on Jetson AGX Orin (Including Tracking)</span>
+            <span class="text-cyan-400 whitespace-nowrap">Trained & Validated on Roboflow</span>
           </div>
         </div>
 
         <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
           <p class="text-xs text-slate-400 leading-relaxed">
-            Real-time inference and Kalman association tracking of ground vehicles from an aerial perspective. Granular model trained to distinguish between vehicles and sub-components for robust aerial vehicle detection and tracking.
+            Fine-tuned RF-DETR Nano (PyTorch-based) via Roboflow on a custom-annotated aerial dataset. The model distinguishes between vehicles and sub-components across 5 hierarchical classes for robust aerial vehicle detection; 89.4% mAP@50 on the validation set.
           </p>
           <div class="p-2 rounded bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
             <i data-lucide="info" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i>
-            <span>Evaluated on real-world aerial test sample (licensed stock footage) to test scale invariance and low-contrast target tracking.</span>
+            <span>Evaluated on real-world aerial test sample (licensed stock footage) to test scale invariance and low-contrast detection.</span>
           </div>
           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2 text-[10px] sm:text-xs font-mono">
             <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">RF-DETR Nano</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Roboflow Augmentation</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">BoT-SORT</span>
-            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">JSON Telemetry</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Roboflow Training & Validation</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PyTorch-Based</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Custom Aerial Dataset</span>
           </div>
         </div>
       </div>
@@ -429,7 +429,7 @@
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-6">
+    <div class="grid lg:grid-cols-2 gap-6">
 
       <!-- CARD 1: STEREO DEPTH ESTIMATION -->
       <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
@@ -462,41 +462,7 @@
         </div>
       </div>
 
-      <!-- CARD 2: GPS-DENIED SLAM & VLA -->
-      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <i data-lucide="map-pin-off" class="w-5 h-5"></i>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Electronic Warfare Resilient</span>
-          </div>
 
-          <h3 class="text-base font-bold text-white mb-2">Visual SLAM for GPS-Denied Environments</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Implementing real-time 3D mapping and autonomous path planning (SLAM3R / V-SLAM) in jammed or GPS-denied operational zones. Point clouds provide dynamic obstacle avoidance and stable local positioning without GNSS signals.
-          </p>
-
-          <div class="space-y-2 font-mono text-xs text-slate-300">
-            <div class="p-2.5 rounded bg-slate-900 border border-slate-800 flex justify-between">
-              <span class="text-slate-500">Method:</span>
-              <span class="text-emerald-400">Point Cloud V-SLAM</span>
-            </div>
-            <div class="p-2.5 rounded bg-slate-900 border border-slate-800 flex justify-between">
-              <span class="text-slate-500">Next-Gen:</span>
-              <span class="text-purple-300">OpenVLA Model Control</span>
-            </div>
-            <div class="p-2.5 rounded bg-slate-900 border border-slate-800 flex justify-between">
-              <span class="text-slate-500">LLM Diagnosis:</span>
-              <span class="text-cyan-300">Automated Fault Finding</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
-          Researching Vision-Language-Action (VLA) models for intuitive UAV direction.
-        </div>
-      </div>
 
       <!-- CARD 3: GIMBAL, SENSOR & SWARM NETWORKING -->
       <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between">
@@ -591,24 +557,24 @@
           <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-105 transition-transform">
             <i data-lucide="eye" class="w-6 h-6"></i>
           </div>
-          <span class="text-xs font-mono text-emerald-400">EDGE INFERENCE & VISION</span>
-          <h3 class="text-lg font-bold text-white mt-1 mb-2">Jetson Edge Tracking Pipeline</h3>
+          <span class="text-xs font-mono text-emerald-400">AERIAL DETECTION & VISION</span>
+          <h3 class="text-lg font-bold text-white mt-1 mb-2">RF-DETR Nano Aerial Vehicle Detection</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Deployment pipeline for real-time target detection and continuous tracking on Jetson AGX Orin, incorporating INT8/FP16 quantized YOLO/RF-DETR engines and BoT-SORT Kalman association.
+            Fine-tuned RF-DETR Nano (PyTorch-based) via Roboflow on a custom-annotated aerial dataset across 5 hierarchical vehicle sub-component classes. Achieved 89.4% mAP@50 on the validation set.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
             <div class="flex justify-between">
-              <span class="text-slate-500">Inference:</span>
-              <span class="text-cyan-400">&lt;22ms per frame</span>
+              <span class="text-slate-500">Validation mAP@50:</span>
+              <span class="text-cyan-400">89.4%</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500">Ingestion:</span>
-              <span class="text-slate-300">GStreamer NVMM Zero-Copy</span>
+              <span class="text-slate-500">Precision / Recall:</span>
+              <span class="text-slate-300">86.8% / 89.2%</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500">Validation:</span>
-              <span class="text-emerald-400">89.4% mAP@50</span>
+              <span class="text-slate-500">Training:</span>
+              <span class="text-emerald-400">PyTorch-based via Roboflow</span>
             </div>
           </div>
         </div>
