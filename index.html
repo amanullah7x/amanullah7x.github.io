@@ -233,7 +233,7 @@
             <p class="text-slate-500">// Real-time MAVLink State Decoupling</p>
             <p><span class="text-cyan-400">[PUB/SUB]</span> ZMQ Sub port <span class="text-amber-300">5556</span> active (55.4 Hz)</p>
             <p><span class="text-emerald-400">[ESTIMATOR]</span> State Vector Est: X=<span class="text-cyan-300">12.44m</span> Y=<span class="text-cyan-300">-4.18m</span> Z=<span class="text-cyan-300">28.50m</span></p>
-            <p><span class="text-purple-400">[VISION]</span> Object: <span class="text-amber-300">Tank</span> (0.89) | <span class="text-emerald-300">Turret</span> (0.84) | <span class="text-cyan-300">Track</span> (0.41)</p>
+            <p><span class="text-purple-400">[VISION]</span> Target: <span class="text-amber-300">Vehicle</span> (0.89) | <span class="text-cyan-300">Track</span> (0.41)</p>
             <p><span class="text-cyan-400">[SERVO]</span> Offboard Yaw Rate Cmd: <span class="text-cyan-300">+0.14 rad/s</span> ($dx/dy$ Align)</p>
             <p><span class="text-slate-400">[UI-AGG]</span> C# TPL / PyQt6 Ring Buffer: <span class="text-emerald-400">20.0 FPS</span> (0 dropped msgs)</p>
           </div>
@@ -273,16 +273,9 @@
         </div>
 
         <div class="relative rounded-xl overflow-hidden bg-black/80 aspect-video border border-slate-800 group-hover:border-cyan-500/40 transition-all">
-          <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="assets/images/autonomous_drone_poster.jpg">
-            <source src="assets/videos/Autonomous_Drone.mp4" type="video/mp4">
-            Your browser does not support video playback.
-          </video>
-          
-          <div class="absolute bottom-3 left-3 right-3 bg-dark-900/85 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 flex justify-between items-center text-[10px] sm:text-xs font-mono">
-            <span class="text-slate-300 flex items-center gap-1.5 truncate">
-              <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i> Autonomous Aerial Tracking & Visual Servoing GCS HUD
-            </span>
-            <span class="text-emerald-400 whitespace-nowrap">30 FPS Stream</span>
+          <!-- TODO: Insert clean recording here -->
+          <div class="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
+            [Clean Simulation Recording Pending]
           </div>
         </div>
 
@@ -317,7 +310,7 @@
           
           <div class="absolute bottom-3 left-3 right-3 bg-dark-900/85 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-800 flex justify-between items-center text-[10px] sm:text-xs font-mono">
             <span class="text-slate-300 flex items-center gap-1.5 truncate">
-              <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> Multi-Part Detection: "tank 0.9235"
+              <i data-lucide="scan" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> Multi-Part Detection: "Class 0 0.9235"
             </span>
             <span class="text-cyan-400 whitespace-nowrap">Trained & Validated on Roboflow</span>
           </div>
@@ -325,7 +318,7 @@
 
         <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
           <p class="text-xs text-slate-400 leading-relaxed">
-            Fine-tuned RF-DETR Nano (PyTorch-based) via Roboflow on a custom-annotated aerial dataset. The model detects heavy ground vehicles (tanks) and specific sub-components to test scale-invariance and multi-part detection; achieved 89.4% mAP@50 on the validation set.
+            RF-DETR Nano, fine-tuned on Roboflow (PyTorch-based) for 50 epochs on a custom-annotated aerial dataset (1,781 images, 384x384). The model detects ground vehicles and their components (Class 0-4); achieved 89.4% mAP@50, 86.8% precision, and 89.2% recall. Results are on the validation set only.
           </p>
           <div class="p-2 rounded bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
             <i data-lucide="info" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i>
@@ -353,7 +346,7 @@
         Granular Sub-Component Detection Benchmarks
       </h2>
       <p class="text-slate-400 text-xs sm:text-sm lg:text-base mt-2 sm:mt-3">
-        Instead of treating targets as single bounding boxes, the custom <strong>RF-DETR Nano</strong> model detects granular vehicle components to enable precise aerial vehicle detection.
+        Instead of treating objects as single bounding boxes, the custom <strong>RF-DETR Nano</strong> model detects granular vehicle components to enable precise aerial vehicle detection.
       </p>
     </div>
 
@@ -372,7 +365,7 @@
       <div class="p-4 sm:p-5 rounded-xl glass-panel border-slate-800">
         <div class="text-[10px] sm:text-xs font-mono text-slate-400">RECALL</div>
         <div class="text-2xl sm:text-3xl font-extrabold font-mono text-amber-400 mt-1">89.2%</div>
-        <div class="text-[10px] sm:text-xs text-slate-500 mt-1">Target retention</div>
+        <div class="text-[10px] sm:text-xs text-slate-500 mt-1">Object retention</div>
       </div>
       <div class="p-4 sm:p-5 rounded-xl glass-panel border-slate-800">
         <div class="text-[10px] sm:text-xs font-mono text-slate-400">F1-SCORE</div>
@@ -439,10 +432,10 @@
           <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-105 transition-transform">
             <i data-lucide="send" class="w-6 h-6"></i>
           </div>
-          <span class="text-xs font-mono text-cyan-400">SIMULATION & CONTROL</span>
+          <span class="text-xs font-mono text-cyan-400">SELF-DIRECTED LEARNING PROJECT</span>
           <h3 class="text-lg font-bold text-white mt-1 mb-2">Autonomous Tracking in NVIDIA Isaac Sim</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            High-fidelity simulation-in-the-loop (SITL) platform coupling <strong>NVIDIA Isaac Sim</strong> with PX4 autopilot firmware and offboard ROS2 Humble nodes for risk-free pre-flight autonomous tracking and approach validation.
+            Software-in-the-loop simulation platform coupling NVIDIA Isaac Sim with PX4 firmware and offboard ROS 2 Humble nodes to validate autonomous visual tracking and approach before hardware tests. Bidirectional MAVLink bridge with 50 Hz IMU and state telemetry.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
@@ -477,7 +470,7 @@
           <span class="text-xs font-mono text-emerald-400">AERIAL DETECTION & VISION</span>
           <h3 class="text-lg font-bold text-white mt-1 mb-2">Custom RF-DETR Nano Aerial Vehicle Detection</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Fine-tuned RF-DETR Nano (PyTorch-based) via Roboflow on a custom-annotated aerial dataset. Detects heavy ground vehicles (tanks) and specific sub-components for scale-invariance testing. Achieved 89.4% mAP@50 on the validation set.
+            RF-DETR Nano, fine-tuned on Roboflow (PyTorch-based) for 50 epochs on a custom-annotated aerial dataset (1,781 images, 384x384). Detects ground vehicles and their components (Class 0-4). Achieved 89.4% mAP@50, 86.8% precision, and 89.2% recall on the validation set only.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
@@ -512,21 +505,21 @@
           <span class="text-xs font-mono text-amber-400">C# (.NET) & PYQT6 GROUND CONTROL</span>
           <h3 class="text-lg font-bold text-white mt-1 mb-2">High-Throughput Ground Station (C# / PyQt6) Desktop GCS Application</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Modular desktop GCS engineered in <strong>C# (.NET)</strong> and <strong>PyQt6</strong> to consume 50–60 Hz telemetry and drone RTSP video streams. Integrated <strong>YOLOv8</strong> on a ground-station Jetson AGX Orin to process the incoming video feed, achieving 8–10ms inference latency for person detection without UI event loop stutter.
+            Multi-threaded PyQt6 ground control station for MAVLink drones. Separate threads handle the drone link (serial/TCP/UDP), the RTSP video stream, and a Leaflet offline-tile map so the UI stays responsive. Runs a pretrained YOLOv8n (Ultralytics) in a worker thread on the live video for person detection. Waypoint missions are created on the map and flown in Guided mode with a set altitude. Controls for altitude change and flight modes (RTL, Land, Guided, etc.). Live telemetry: position, flight time, battery, speed, altitude, roll/pitch/yaw, bearing.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
             <div class="flex justify-between">
-              <span class="text-slate-500">Core Stack:</span>
-              <span class="text-amber-400">C# (.NET) + PyQt6</span>
+              <span class="text-slate-500">Framework:</span>
+              <span class="text-amber-400">PyQt6 / Leaflet</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500">Ingestion:</span>
-              <span class="text-slate-300">50-60 Hz ZMQ Pub/Sub</span>
+              <span class="text-slate-500">Telemetry & Video:</span>
+              <span class="text-slate-300">MAVLink / RTSP</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500">UI Performance:</span>
-              <span class="text-emerald-400">20 Hz Decoupled Loop</span>
+              <span class="text-slate-500">Vision:</span>
+              <span class="text-emerald-400">YOLOv8n</span>
             </div>
           </div>
         </div>
@@ -547,7 +540,7 @@
           <span class="text-xs font-mono text-purple-400">SPATIAL MAPPING & NAVIGATION</span>
           <h3 class="text-lg font-bold text-white mt-1 mb-2">LiDAR-Based Autonomous Aerial Mapping</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Engineered a spatial mapping pipeline for GPS-degraded aerial navigation. Integrated an <strong>RPLIDAR S2</strong> with <strong>ROS2 Humble</strong> on Ubuntu 22.04 LTS, using Gazebo and RViz to generate occupancy grids that enable the UAV to fly to selected waypoints without GPS dependency.
+            Spatial mapping pipeline for GPS-degraded UAV navigation. Integrated an RPLIDAR S2 with ROS 2 Humble on Ubuntu 22.04, generating occupancy grids in Gazebo and RViz for waypoint-based navigation without GPS.
           </p>
 
           <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
@@ -557,11 +550,11 @@
             </div>
             <div class="flex justify-between">
               <span class="text-slate-500">Framework:</span>
-              <span class="text-slate-300">ROS2 Humble / RViz</span>
+              <span class="text-slate-300">ROS 2 Humble / RViz</span>
             </div>
             <div class="flex justify-between">
               <span class="text-slate-500">Environment:</span>
-              <span class="text-slate-300">Ubuntu 22.04 LTS / Gazebo</span>
+              <span class="text-slate-300">Ubuntu 22.04 / Gazebo</span>
             </div>
           </div>
         </div>
@@ -699,13 +692,13 @@
               <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i> High-Fidelity Pre-Flight Verification
             </h4>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Physical drone flight tests for autonomous target tracking carry severe hardware crash risks and unpredictable wind/lighting variables. Developing algorithms directly on hardware slows iteration cycles.
+              Physical drone flight tests for autonomous visual tracking carry severe hardware crash risks and unpredictable wind/lighting variables. Developing algorithms directly on hardware slows iteration cycles.
             </p>
             <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Closed-Loop Digital Twin Architecture
             </h4>
             <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside leading-relaxed">
-              <li><strong>NVIDIA Isaac Sim:</strong> Simulates photorealistic camera feeds with RTX ray tracing, aerodynamics, and dynamic ground targets.</li>
+              <li><strong>NVIDIA Isaac Sim:</strong> Simulates photorealistic camera feeds with RTX ray tracing, aerodynamics, and moving subjects.</li>
               <li><strong>PX4 SITL Integration:</strong> Runs standard autopilot flight control algorithms locally.</li>
               <li><strong>ROS2 Offboard Node:</strong> Ingests synthetic camera frames, computes tracking error, and publishes MAVLink offboard setpoints back into the simulation loop.</li>
             </ul>
@@ -720,12 +713,12 @@
                │ (Synthetic Image)             │ (Velocity Cmd)
                ▼                               │
 ┌──────────────────────────────┐ ┌─────────────┴──────────────┐
-│ Perception Node (ROS2 / YOLO)│ │ PX4 SITL Flight Controller │
+│ Perception Node (ROS/YOLO)   │ │ PX4 SITL Flight Controller │
 └──────────────┬───────────────┘ └─────────────▲──────────────┘
-               │ (Target BBox)                 │ (MAVLink Offboard)
+               │ (Detection BBox)              │ (MAVLink Offboard)
                ▼                               │
 ┌──────────────────────────────────────────────┴──────────────┐
-│ Visual Servoing & Guidance Node (PID Controller)            │
+│ Visual Servoing Node (PID)                                  │
 └─────────────────────────────────────────────────────────────┘
 </pre>
           </div>
@@ -790,7 +783,7 @@
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">YOLOv8 / YOLOv11</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Roboflow</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">OpenCV</span>
-          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Google Coral</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">PyTorch</span>
         </div>
       </div>
 
@@ -830,7 +823,6 @@
         <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Jetson AGX Orin</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Raspberry Pi 5</span>
-          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Google Coral</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Pixhawk 6C/6X</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">ESP32</span>
         </div>
