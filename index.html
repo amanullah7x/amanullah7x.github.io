@@ -340,6 +340,38 @@
         </div>
       </div>
 
+
+      <!-- DEMO 3: ISAAC SIM + PX4 PERCEPTION TESTBED -->
+      <div class="lg:col-span-2 rounded-2xl glass-panel p-4 sm:p-5 border-slate-800 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3 sm:mb-4">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse flex-shrink-0"></span>
+            <h3 class="font-bold text-white text-sm sm:text-base truncate">Isaac Sim + PX4 UAV Perception Testbed</h3>
+          </div>
+          <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-400 border border-slate-700 whitespace-nowrap">PX4 SITL + QGC + YOLOv8</span>
+        </div>
+
+        <div class="relative rounded-xl overflow-hidden bg-black/80 aspect-video border border-slate-800 group-hover:border-amber-500/40 transition-all">
+          <video class="w-full h-full object-contain" controls muted playsinline preload="metadata" poster="assets/images/isaac_px4_testbed_poster.jpg">
+            <source src="assets/videos/Isaac_PX4_Perception_Testbed.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+
+        <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
+          <p class="text-xs text-slate-400 leading-relaxed">
+            One-click launcher that starts <strong>NVIDIA Isaac Sim</strong> with a PX4-controlled drone (Pegasus Simulator) in the Baylands park with a car and a pedestrian, opens <strong>QGroundControl</strong> for take-off and joystick flight, and shows the drone's <strong>2-axis gimbal camera</strong> with live <strong>YOLOv8s (VisDrone)</strong> detection. Recording: Holybro X500 take-off from QGC, gimbal steered from the app in flight, car and pedestrian detected, return to launch.
+          </p>
+          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2 text-[10px] sm:text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Isaac Sim 6.0</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Pegasus + PX4 v1.14 (lockstep)</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">QGroundControl</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">ROS 2 Humble</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">YOLOv8s VisDrone</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PyQt5</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -608,6 +640,54 @@
         </div>
       </div>
 
+
+      <!-- PROJECT CARD 6: Isaac Sim + PX4 Perception Testbed -->
+      <div class="rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-105 transition-transform">
+            <i data-lucide="plane" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-amber-400 uppercase">Simulation & Perception Testbed</span>
+          <h3 class="text-lg font-bold text-white mt-1 mb-2">Isaac Sim + PX4 UAV Perception Testbed</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Desktop launcher for NVIDIA Isaac Sim + Pegasus + PX4 SITL + QGroundControl with a selectable drone (Holybro X500 built from PX4's model, 5-inch FPV racer, Pegasus quad, Iris), a gimbal camera steerable in flight, and live YOLOv8s detection of people and vehicles in the Baylands park.
+          </p>
+
+          <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs font-mono text-slate-300">
+            <div class="flex justify-between">
+              <span class="text-slate-500">Flight loop:</span>
+              <span class="text-slate-300">PX4 lockstep, 250 Hz physics</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Drones:</span>
+              <span class="text-slate-300">X500 / FPV / Pegasus / Iris</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Verified:</span>
+              <span class="text-emerald-400">Take-off, hover, land per model</span>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-800 text-xs font-mono">
+            <span class="text-slate-500">Roadmap:</span>
+            <ul class="mt-2 space-y-1 text-slate-300">
+              <li class="flex gap-1.5"><span class="text-amber-400">›</span><span>FANET semantic messages (~72 B) instead of video, over NS-3</span></li>
+              <li class="flex gap-1.5"><span class="text-amber-400">›</span><span>Multi-UAV swarms, heterogeneous teams</span></li>
+              <li class="flex gap-1.5"><span class="text-amber-400">›</span><span>Tracking IDs + MOTA/IDF1, offboard target following</span></li>
+              <li class="flex gap-1.5"><span class="text-amber-400">›</span><span>Hexacopter, MAVLink gimbal, moving targets</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 grid grid-cols-2 gap-2">
+          <a href="https://github.com/amanullah7x/isaac-px4-uav-perception-testbed" target="_blank" class="py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs font-mono font-semibold flex items-center justify-center gap-2 border border-slate-700 transition-colors">
+            <i data-lucide="github" class="w-4 h-4"></i> Repository
+          </a>
+          <a href="#demos" class="py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs font-mono font-semibold flex items-center justify-center gap-2 border border-slate-700 transition-colors">
+            <i data-lucide="play-circle" class="w-4 h-4"></i> Watch Demo
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
