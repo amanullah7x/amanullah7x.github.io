@@ -372,6 +372,44 @@
           </div>
         </div>
       </div>
+
+      <!-- DEMO 4: SYNTHETIC AERIAL DATA (ISAAC SIM REPLICATOR) -->
+      <div class="lg:col-span-2 rounded-2xl glass-panel p-4 sm:p-5 border-slate-800 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3 sm:mb-4">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse flex-shrink-0"></span>
+            <h3 class="font-bold text-white text-sm sm:text-base truncate">Synthetic Aerial Data with Isaac Sim Replicator</h3>
+          </div>
+          <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-400 border border-slate-700 whitespace-nowrap">6,000 frames, auto-labelled</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden bg-black/80 border border-slate-800 group-hover:border-purple-500/40 transition-all">
+            <img src="assets/images/synthetic_aerial_samples.jpg" alt="Synthetic aerial frames with renderer-generated labels" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="rounded-xl overflow-hidden bg-white/95 border border-slate-800 p-2 flex items-center">
+            <img src="assets/images/synthetic_ap50_by_model.png" alt="AP50 per model on real VisDrone validation images" class="w-full object-contain" loading="lazy">
+          </div>
+        </div>
+
+        <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Does simulator-rendered data improve a drone-view detector on <strong>real</strong> images? A <strong>Replicator</strong> generator renders cars and people in the Baylands park with randomized altitude (8-120 m), camera angle, sun, paint and ground; labels come from the renderer. Four <strong>YOLOv8s</strong> variants were scored on the 548 real <strong>VisDrone2019</strong> validation images.
+          </p>
+          <div class="p-2 rounded bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-400 flex items-start gap-1.5">
+            <i data-lucide="info" class="w-3.5 h-3.5 text-purple-400 flex-shrink-0 mt-0.5"></i>
+            <span>Result: no measurable gain at this scale (real+synthetic 0.372 vs real-only 0.371 mAP50, same schedule). Trained on synthetic images only, the model still finds real cars (AP50 0.36) and some pedestrians (0.11).</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2 text-[10px] sm:text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Isaac Sim 6.0 Replicator</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Domain Randomization</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PhysX Ray-Cast Placement</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">YOLOv8s</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">VisDrone2019-DET</span>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Sim-to-Real</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -688,6 +726,48 @@
           </a>
         </div>
       </div>
+
+      <!-- PROJECT CARD 7: Synthetic Aerial Data (Isaac Sim Replicator) -->
+      <div class="md:col-span-2 rounded-2xl glass-panel p-5 sm:p-6 border-slate-800 flex flex-col justify-between group hover:border-purple-500/50 transition-all">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-purple-400 uppercase">Synthetic Data & Sim-to-Real</span>
+          <h3 class="text-lg font-bold text-white mt-1 mb-2">Synthetic Aerial Data for UAV Detection</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Isaac Sim Replicator generator that renders labelled drone-view images of cars and people (visibility-aware placement via PhysX ray casts, randomized camera, lighting and paint), and a controlled experiment testing whether the data helps a YOLOv8s detector on real VisDrone images. Reported as measured, including the null result.
+          </p>
+
+          <div class="mt-4 pt-4 border-t border-slate-800 grid sm:grid-cols-2 gap-x-8 gap-y-2 text-xs font-mono text-slate-300">
+            <div class="flex justify-between">
+              <span class="text-slate-500">Dataset:</span>
+              <span class="text-slate-300">6,000 frames, 100k boxes</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Real-only / real+synthetic:</span>
+              <span class="text-slate-300">0.371 / 0.372 mAP50</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Synthetic-only, real cars:</span>
+              <span class="text-purple-400">AP50 0.36</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Render speed:</span>
+              <span class="text-slate-300">~4 frames/s, RTX 4060</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 grid grid-cols-2 gap-2">
+          <a href="https://github.com/amanullah7x/uav-synthetic-aerial-detection" target="_blank" class="py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-purple-400 text-xs font-mono font-semibold flex items-center justify-center gap-2 border border-slate-700 transition-colors">
+            <i data-lucide="github" class="w-4 h-4"></i> Repository
+          </a>
+          <a href="#demos" class="py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-purple-400 text-xs font-mono font-semibold flex items-center justify-center gap-2 border border-slate-700 transition-colors">
+            <i data-lucide="image" class="w-4 h-4"></i> See Results
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -888,6 +968,7 @@
         <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">ROS / ROS2 Humble</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">NVIDIA Isaac Sim</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Isaac Sim Replicator</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">Gazebo</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">PX4 Autopilot</span>
           <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-200 border border-slate-700">ArduPilot</span>
