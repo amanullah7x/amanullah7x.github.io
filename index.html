@@ -255,6 +255,76 @@
       .hero-grid { grid-template-columns: 1fr; gap: 36px; }
     }
 
+
+    /* ---------- Hero scene (animated illustration) ---------- */
+    .hero { position: relative; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(var(--line-strong) 1px, transparent 1.4px); background-size: 24px 24px;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 78%); mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+      opacity: .55;
+    }
+    .hero > .wrap { position: relative; z-index: 1; }
+    .scene-card {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow);
+    }
+    .scene { display: block; width: 100%; height: auto; }
+    .scene text { font-family: var(--mono); font-size: 12.5px; fill: var(--ink-2); }
+    .scene .sky { fill: var(--surface); }
+    .scene .ground { fill: var(--bg-alt); }
+    .scene .gridl { stroke: var(--line-strong); stroke-width: 1; opacity: .7; }
+    .scene .hill { fill: var(--line); opacity: .6; }
+    .scene .ink { fill: var(--ink); }
+    .scene .ink-s { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; fill: none; }
+    .scene .far-s { stroke: var(--muted); stroke-width: 4; stroke-linecap: round; fill: none; }
+    .scene .acc { fill: var(--accent); }
+    .scene .shadow { fill: var(--ink); opacity: .12; }
+    .scene .cone { fill: var(--accent); opacity: .12; }
+    .scene .cone-e { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4 5; fill: none; opacity: .55; }
+    .scene .bbox { fill: none; stroke: var(--accent); stroke-width: 1.6; }
+    .scene .bl { fill: var(--accent); }
+    .scene .bt { fill: var(--bg); font-size: 11.5px; font-weight: 500; }
+    .scene .car { fill: var(--c3); }
+    .scene .glass { fill: var(--surface); opacity: .75; }
+    .scene .link { fill: none; stroke: var(--line-strong); stroke-width: 1.2; }
+    .scene .pkts { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 0.1 46; animation: pkt 1.1s linear infinite; }
+    .scene .lbl { fill: var(--accent-ink); font-weight: 500; }
+    .scene .rotor { fill: var(--accent); opacity: .45; transform-box: fill-box; transform-origin: center; animation: spin .14s linear infinite alternate; }
+    .scene .drone { animation: hover 5s ease-in-out infinite; transform-origin: 190px 95px; }
+    .scene .scan { animation: pulse 2.4s ease-in-out infinite; }
+    .scene .dog-walk { animation: walk 18s linear infinite; }
+    .scene .dog-body { animation: bob .45s ease-in-out infinite; }
+    .scene .leg { animation: hip .9s ease-in-out infinite; }
+    .scene .leg .shin { animation: knee .9s ease-in-out infinite; }
+    .scene .leg.b, .scene .leg.b .shin { animation-delay: -.45s; }
+    @keyframes pkt { to { stroke-dashoffset: -46.1; } }
+    @keyframes spin { from { transform: scaleX(1); } to { transform: scaleX(.3); } }
+    @keyframes hover { 0%, 100% { transform: translate(0, 0) rotate(-1.5deg); } 50% { transform: translate(6px, -7px) rotate(1.5deg); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+    @keyframes walk { from { transform: translateX(-90px); } to { transform: translateX(690px); } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.6px); } }
+    @keyframes hip { 0%, 100% { transform: rotate(24deg); } 50% { transform: rotate(-24deg); } }
+    @keyframes knee { 0%, 100% { transform: rotate(0deg); } 30% { transform: rotate(-38deg); } 60% { transform: rotate(0deg); } }
+    @media (prefers-reduced-motion: reduce) { .scene * { animation: none !important; } .pipe li { animation: none !important; } }
+
+    /* ---------- Pipeline strip ---------- */
+    .pipe { display: flex; flex-wrap: wrap; gap: 10px 0; margin: 0 0 20px; align-items: stretch; }
+    .pipe li {
+      flex: 1 1 150px; min-width: 0; position: relative; padding: 12px 14px; margin-right: 22px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+      animation: step 6s linear infinite;
+    }
+    .pipe li:last-child { margin-right: 0; }
+    .pipe li:not(:last-child)::after {
+      content: ""; position: absolute; right: -17px; top: 50%; width: 12px; height: 1px; background: var(--line-strong);
+    }
+    .pipe li:nth-child(2) { animation-delay: 1s; } .pipe li:nth-child(3) { animation-delay: 2s; }
+    .pipe li:nth-child(4) { animation-delay: 3s; } .pipe li:nth-child(5) { animation-delay: 4s; } .pipe li:nth-child(6) { animation-delay: 5s; }
+    .pipe .k { display: block; font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .pipe .v { display: block; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; margin-top: 3px; }
+    @keyframes step { 0%, 14% { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); } 22%, 100% { border-color: var(--line); box-shadow: none; } }
+    @media (max-width: 640px) { .pipe li { flex-basis: 40%; margin-right: 10px; } .pipe li::after { display: none; } .pipe li:nth-child(even) { margin-right: 0; } }
+
     /* ---------- Stats ---------- */
     .stats {
       display: grid; grid-template-columns: repeat(4, 1fr);
@@ -538,12 +608,74 @@
           </div>
 
           <figure class="reveal" style="margin:0">
-            <div class="hero-media">
-              <video class="lazy-video" muted loop playsinline preload="metadata" poster="assets/images/isaac_px4_testbed_poster.jpg" aria-label="Isaac Sim and PX4 testbed recording: drone take-off, gimbal control and live detection of a car and a pedestrian">
-                <source src="assets/videos/Isaac_PX4_Perception_Testbed.mp4" type="video/mp4">
-              </video>
+            <div class="scene-card">
+              <svg class="scene" viewBox="0 0 600 420" role="img" aria-label="Illustration: a quadcopter detects a car and a pedestrian with its camera and sends small 72-byte messages over a radio link to a ground station, while a quadruped robot walks past">
+                <rect class="sky" x="0" y="0" width="600" height="250"/>
+                <path class="hill" d="M0 250 L70 222 L150 240 L250 210 L340 238 L430 216 L520 236 L600 220 L600 250 Z"/>
+                <rect class="ground" x="0" y="250" width="600" height="170"/>
+                <line class="gridl" x1="0" x2="600" y1="262" y2="262"/><line class="gridl" x1="0" x2="600" y1="280" y2="280"/><line class="gridl" x1="0" x2="600" y1="306" y2="306"/><line class="gridl" x1="0" x2="600" y1="342" y2="342"/><line class="gridl" x1="0" x2="600" y1="392" y2="392"/><line class="gridl" x1="300" y1="250" x2="-300" y2="420"/><line class="gridl" x1="300" y1="250" x2="-150" y2="420"/><line class="gridl" x1="300" y1="250" x2="0" y2="420"/><line class="gridl" x1="300" y1="250" x2="150" y2="420"/><line class="gridl" x1="300" y1="250" x2="300" y2="420"/><line class="gridl" x1="300" y1="250" x2="450" y2="420"/><line class="gridl" x1="300" y1="250" x2="600" y2="420"/><line class="gridl" x1="300" y1="250" x2="750" y2="420"/><line class="gridl" x1="300" y1="250" x2="900" y2="420"/>
+
+                <!-- radio link and packets -->
+                <path class="link" d="M222 92 Q400 60 520 222"/>
+                <path class="pkts" d="M222 92 Q400 60 520 222"/>
+                <text class="lbl" x="392" y="78" text-anchor="middle">72 B per target</text>
+
+                <!-- ground station -->
+                <ellipse class="shadow" cx="522" cy="302" rx="30" ry="4"/>
+                <rect class="ink" x="502" y="282" width="36" height="19" rx="4"/>
+                <rect class="acc" x="508" y="288" width="12" height="3" rx="1.5"/>
+                <path class="ink-s" style="stroke-width:3" d="M520 282 V226 M506 236 H534 M510 247 H530 M513 258 H527"/>
+                <circle class="acc" cx="520" cy="223" r="4.5"/>
+                <text x="520" y="322" text-anchor="middle">ground station</text>
+
+                <!-- drone with camera cone -->
+                <g class="drone">
+                  <path class="cone" d="M190 112 L246 322 L446 322 Z"/>
+                  <path class="cone-e" d="M190 112 L246 322 M190 112 L446 322"/>
+                  <line class="ink-s" x1="134" y1="89" x2="246" y2="89"/>
+                  <rect class="ink" x="128" y="80" width="8" height="11" rx="2"/><rect class="ink" x="244" y="80" width="8" height="11" rx="2"/>
+                  <ellipse class="rotor" cx="132" cy="78" rx="30" ry="3"/><ellipse class="rotor" cx="248" cy="78" rx="30" ry="3"/>
+                  <path class="ink-s" style="stroke-width:3" d="M176 100 L166 118 M204 100 L214 118 M156 118 H176 M204 118 H224"/>
+                  <rect class="ink" x="166" y="80" width="48" height="22" rx="9"/>
+                  <rect class="acc" x="178" y="76" width="24" height="8" rx="4"/>
+                  <circle class="ink" cx="190" cy="108" r="8"/><circle class="acc" cx="192" cy="110" r="3.2"/>
+                </g>
+                <text x="190" y="52" text-anchor="middle">YOLOv8s + ByteTrack on board</text>
+
+                <!-- car + detection -->
+                <ellipse class="shadow" cx="304" cy="313" rx="42" ry="4"/>
+                <path class="car" d="M268 310 V300 Q268 296 274 295 L286 293 L296 283 Q298 281 302 281 H322 Q326 281 328 284 L334 293 Q342 295 342 300 V310 Z"/>
+                <path class="glass" d="M291 293 L299 285 H309 V293 Z M312 285 H322 L328 293 H312 Z"/>
+                <circle class="ink" cx="284" cy="310" r="6"/><circle class="ink" cx="326" cy="310" r="6"/>
+                <g class="scan">
+                  <rect class="bbox" x="260" y="274" width="90" height="46"/>
+                  <rect class="bl" x="260" y="258" width="66" height="16"/><text class="bt" x="265" y="270">car 0.92</text>
+                </g>
+
+                <!-- pedestrian + detection -->
+                <ellipse class="shadow" cx="412" cy="313" rx="10" ry="2.5"/>
+                <circle class="ink" cx="412" cy="281" r="5"/>
+                <path class="ink-s" style="stroke-width:3.5" d="M412 288 V302 M412 302 L407 313 M412 302 L417 313 M412 291 L405 299 M412 291 L419 299"/>
+                <g class="scan" style="animation-delay:-1.2s">
+                  <rect class="bbox" x="399" y="272" width="26" height="46"/>
+                  <rect class="bl" x="399" y="256" width="110" height="16"/><text class="bt" x="404" y="268">pedestrian 0.87</text>
+                </g>
+
+                <!-- quadruped -->
+                <g class="dog-walk"><g transform="translate(0,384) scale(1.25)">
+                  <ellipse class="shadow" cx="4" cy="1" rx="44" ry="4"/>
+                  <g class="leg b" style="transform-origin:24px -32px"><line class="far-s" x1="24" y1="-32" x2="19" y2="-16"/><g class="shin" style="transform-origin:19px -16px"><line class="far-s" x1="19" y1="-16" x2="26" y2="-1"/></g></g><g class="leg " style="transform-origin:-22px -32px"><line class="far-s" x1="-22" y1="-32" x2="-27" y2="-16"/><g class="shin" style="transform-origin:-27px -16px"><line class="far-s" x1="-27" y1="-16" x2="-20" y2="-1"/></g></g>
+                  <g class="dog-body">
+                    <rect class="ink" x="-36" y="-45" width="72" height="17" rx="7"/>
+                    <rect class="ink" x="30" y="-53" width="22" height="15" rx="5"/>
+                    <rect class="acc" x="43" y="-49" width="7" height="4" rx="2"/>
+                    <rect class="acc" x="-14" y="-49" width="20" height="5" rx="2.5"/>
+                  </g>
+                  <g class="leg " style="transform-origin:24px -32px"><line class="ink-s" x1="24" y1="-32" x2="19" y2="-16"/><g class="shin" style="transform-origin:19px -16px"><line class="ink-s" x1="19" y1="-16" x2="26" y2="-1"/></g></g><g class="leg b" style="transform-origin:-22px -32px"><line class="ink-s" x1="-22" y1="-32" x2="-27" y2="-16"/><g class="shin" style="transform-origin:-27px -16px"><line class="ink-s" x1="-27" y1="-16" x2="-20" y2="-1"/></g></g>
+                </g></g>
+              </svg>
             </div>
-            <figcaption class="media-caption"><span class="k">Recording</span><span>PX4 drone in NVIDIA Isaac Sim with live YOLOv8s detection from its gimbal camera. This testbed is the front end of my FANET study.</span></figcaption>
+            <figcaption class="media-caption"><span class="k">Illustration</span><span>The idea behind my FANET paper: detect on the drone, then send 72 bytes per target to the ground in place of video frames.</span></figcaption>
           </figure>
         </div>
 
@@ -566,6 +698,15 @@
           </div>
           <p>When drones share video over a lossy, long-delay link, most of the bandwidth goes to pixels the ground station never needs. My first-author paper measures what happens when the drone sends what it detected instead.</p>
         </div>
+
+        <ul class="pipe reveal" aria-label="Semantic pipeline, from camera frame to ground station">
+          <li><span class="k">Sense</span><span class="v">1080p camera frame</span></li>
+          <li><span class="k">Detect</span><span class="v">YOLOv8s on board</span></li>
+          <li><span class="k">Track</span><span class="v">ByteTrack IDs</span></li>
+          <li><span class="k">Encode</span><span class="v">72-byte message</span></li>
+          <li><span class="k">Link</span><span class="v">150 ms, 0–30% loss</span></li>
+          <li><span class="k">Receive</span><span class="v">Ground station</span></li>
+        </ul>
 
         <article class="card paper reveal">
           <div>
@@ -691,7 +832,7 @@
               <div><dt>Airframes</dt><dd>X500, FPV, Pegasus, Iris</dd></div>
               <div><dt>Verified</dt><dd>Take-off, hover, land <span>· per model</span></dd></div>
             </dl>
-            <div class="chips"><span class="chip">Isaac Sim 6.0</span><span class="chip">Pegasus</span><span class="chip">PX4 v1.14</span><span class="chip">QGroundControl</span><span class="chip">ROS 2 Humble</span><span class="chip">YOLOv8s · VisDrone</span><span class="chip">PyQt5</span></div>
+            <div class="chips"><span class="chip">Isaac Sim 6.0</span><span class="chip">Pegasus</span><span class="chip">PX4 v1.14</span><span class="chip">QGroundControl</span><span class="chip">ROS 2 Humble</span><span class="chip">YOLOv8s · public VisDrone weights</span><span class="chip">PyQt5</span></div>
             <div class="p-links">
               <a class="btn btn-sm" href="https://github.com/amanullah7x/isaac-px4-uav-perception-testbed" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Repository</a>
             </div>
@@ -719,7 +860,7 @@
           <div class="p-body">
             <div class="kicker"><span class="tag accent">Open source</span><span class="tag">Synthetic data · Sim-to-real</span></div>
             <h3>Does synthetic aerial data help a real drone detector?</h3>
-            <p>I built an Omniverse Replicator generator that renders labelled drone-view images of cars and people. It randomizes altitude (8–120&nbsp;m), camera pitch, field of view, sun, paint and ground, and uses PhysX ray casts to place only visible objects. I then trained four YOLOv8s variants and scored them on the 548 real VisDrone2019 validation images.</p>
+            <p>I built an Omniverse Replicator generator that renders labelled drone-view images of cars and people. It randomizes altitude (8–120&nbsp;m), camera pitch, field of view, sun, paint and ground, and uses PhysX ray casts to place only visible objects. I then scored four YOLOv8s models on the 548 real VisDrone2019 validation images: a public VisDrone baseline and three variants I trained (real-only, real&nbsp;+&nbsp;synthetic and synthetic-only).</p>
             <dl class="kv">
               <div><dt>Dataset</dt><dd>6,000 frames <span>· ~100k boxes</span></dd></div>
               <div><dt>Render speed</dt><dd>~4 frames/s <span>· RTX 4060</span></dd></div>
