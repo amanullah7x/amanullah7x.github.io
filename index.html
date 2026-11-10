@@ -659,6 +659,18 @@
                 </g>
                 <text x="190" y="52" text-anchor="middle">YOLOv8s + ByteTrack on board</text>
 
+                <!-- quadruped -->
+                <g class="dog-walk"><g transform="translate(0,276) scale(0.62)">
+                  <ellipse class="shadow" cx="4" cy="1" rx="44" ry="4"/>
+                  <g class="leg b" style="transform-origin:24px -32px"><line class="far-s" x1="24" y1="-32" x2="19" y2="-16"/><g class="shin" style="transform-origin:19px -16px"><line class="far-s" x1="19" y1="-16" x2="26" y2="-1"/></g></g><g class="leg " style="transform-origin:-22px -32px"><line class="far-s" x1="-22" y1="-32" x2="-27" y2="-16"/><g class="shin" style="transform-origin:-27px -16px"><line class="far-s" x1="-27" y1="-16" x2="-20" y2="-1"/></g></g>
+                  <g class="dog-body">
+                    <rect class="ink" x="-36" y="-45" width="72" height="17" rx="7"/>
+                    <rect class="ink" x="30" y="-53" width="22" height="15" rx="5"/>
+                    <rect class="acc" x="43" y="-49" width="7" height="4" rx="2"/>
+                    <rect class="acc" x="-14" y="-49" width="20" height="5" rx="2.5"/>
+                  </g>
+                  <g class="leg " style="transform-origin:24px -32px"><line class="ink-s" x1="24" y1="-32" x2="19" y2="-16"/><g class="shin" style="transform-origin:19px -16px"><line class="ink-s" x1="19" y1="-16" x2="26" y2="-1"/></g></g><g class="leg b" style="transform-origin:-22px -32px"><line class="ink-s" x1="-22" y1="-32" x2="-27" y2="-16"/><g class="shin" style="transform-origin:-27px -16px"><line class="ink-s" x1="-27" y1="-16" x2="-20" y2="-1"/></g></g>
+                </g></g>
                 <!-- car + detection -->
                 <ellipse class="shadow" cx="304" cy="313" rx="42" ry="4"/>
                 <path class="car" d="M268 310 V300 Q268 296 274 295 L286 293 L296 283 Q298 281 302 281 H322 Q326 281 328 284 L334 293 Q342 295 342 300 V310 Z"/>
@@ -678,18 +690,6 @@
                   <rect class="bl" x="399" y="256" width="110" height="16"/><text class="bt" x="404" y="268">pedestrian 0.87</text>
                 </g>
 
-                <!-- quadruped -->
-                <g class="dog-walk"><g transform="translate(0,384) scale(1.25)">
-                  <ellipse class="shadow" cx="4" cy="1" rx="44" ry="4"/>
-                  <g class="leg b" style="transform-origin:24px -32px"><line class="far-s" x1="24" y1="-32" x2="19" y2="-16"/><g class="shin" style="transform-origin:19px -16px"><line class="far-s" x1="19" y1="-16" x2="26" y2="-1"/></g></g><g class="leg " style="transform-origin:-22px -32px"><line class="far-s" x1="-22" y1="-32" x2="-27" y2="-16"/><g class="shin" style="transform-origin:-27px -16px"><line class="far-s" x1="-27" y1="-16" x2="-20" y2="-1"/></g></g>
-                  <g class="dog-body">
-                    <rect class="ink" x="-36" y="-45" width="72" height="17" rx="7"/>
-                    <rect class="ink" x="30" y="-53" width="22" height="15" rx="5"/>
-                    <rect class="acc" x="43" y="-49" width="7" height="4" rx="2"/>
-                    <rect class="acc" x="-14" y="-49" width="20" height="5" rx="2.5"/>
-                  </g>
-                  <g class="leg " style="transform-origin:24px -32px"><line class="ink-s" x1="24" y1="-32" x2="19" y2="-16"/><g class="shin" style="transform-origin:19px -16px"><line class="ink-s" x1="19" y1="-16" x2="26" y2="-1"/></g></g><g class="leg b" style="transform-origin:-22px -32px"><line class="ink-s" x1="-22" y1="-32" x2="-27" y2="-16"/><g class="shin" style="transform-origin:-27px -16px"><line class="ink-s" x1="-27" y1="-16" x2="-20" y2="-1"/></g></g>
-                </g></g>
               </svg>
             </div>
             <figcaption class="media-caption"><span class="k">Illustration</span><span>The idea behind my FANET paper: detect on the drone, then send 72 bytes per target to the ground in place of video frames.</span></figcaption>
