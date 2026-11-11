@@ -341,6 +341,15 @@
     @media (max-width: 640px) { table.cmp .bar { width: 26px; margin-right: 5px; } }
     @media (prefers-reduced-motion: reduce) { .chart.draw polyline { animation: none !important; stroke-dasharray: none !important; } table.cmp .bar i, .chart .marker { transition: none; } }
 
+    .liverun { margin-top: 20px; padding: 28px; }
+    .liverun-head { display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px 32px; align-items: end; margin-bottom: 18px; }
+    .liverun-head > * { min-width: 0; }
+    .liverun-head h3 { font-size: clamp(19px, 2vw, 23px); letter-spacing: -0.02em; margin-top: 10px; }
+    .liverun-head p { font-size: 14px; color: var(--muted); }
+    .liverun-frame { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #000; aspect-ratio: 16 / 9; max-width: 100%; }
+    .liverun-frame video { width: 100%; height: 100%; object-fit: contain; }
+    @media (max-width: 860px) { .liverun { padding: 18px 14px; } .liverun-head { grid-template-columns: 1fr; } }
+
     /* ---------- Stats ---------- */
     .stats {
       display: grid; grid-template-columns: repeat(4, 1fr);
@@ -812,6 +821,22 @@
             </div>
           </div>
         </article>
+
+        <figure class="card liverun reveal">
+          <div class="liverun-head">
+            <div>
+              <span class="tag accent"><span class="dot"></span>Real run · 80 s</span>
+              <h3>One flight through the emulated link at 15% packet loss</h3>
+            </div>
+            <p>Left: the drone's camera with onboard YOLOv8s + ByteTrack. Right: the ground station rebuilding tracks only from the 72-byte messages that got through NS-3, with live counters. Bottom left: best-effort 1080p JPEG on the same link in a separate run, where not one complete frame arrives.</p>
+          </div>
+          <div class="liverun-frame">
+            <video class="lazy-video" muted loop playsinline preload="none" poster="assets/images/fanet_semantic_poster.jpg" aria-label="80-second recording: drone camera with detections, ground-station tracks rebuilt from received semantic messages, live delivery counters near 0.85 at 15 percent loss, and a best-effort JPEG stream that delivers zero frames">
+              <source src="assets/videos/FANET_Semantic_Link.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption class="media-caption"><span class="k">Recording</span><span>Isaac Sim flight (PX4 X500, 10 m) replayed through NS-3 at 15% loss, 150 ms delay, the same method as the paper's sweeps. End of run: 401 of 477 messages delivered (0.84), 150.8 ms mean latency, about 1.6 kB/s. JPEG: 0 of 1,661 frames.</span></figcaption>
+        </figure>
 
         <div class="interests">
           <div class="card interest reveal"><span class="ix">01</span><h4>Robot perception</h4><p>Detecting and tracking small objects from the air on hardware a drone can carry.</p></div>
